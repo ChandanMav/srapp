@@ -1,0 +1,73 @@
+<form class="row g-3 px-4" [formGroup]="frmRegister" (ngSubmit)="SaveEmployee(frmRegister.value)">
+
+  <div class="col-12 col-md-6">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="name">
+  </div>
+
+  <div class="col-12 col-md-6">
+    <label for="inputSport" class="form-label">Select Sports</label>
+    <select id="inputSport" class="form-select" name="sportstype" formControlName="sportstype">
+      <option value="Football" selected>Football</option>
+      <option value="Tennis" selected>Tennis</option>
+      <option value="Baseball" selected>Baseball</option>
+    </select>
+  </div>
+
+  <div class="col-md-6 col-12">
+    <label for="bmi" class="form-label">BMI</label>
+    <input type="number" min="1" max="99" class="form-control" id="bmi" name="bmi" formControlName="bmi" required
+      placeholder="Between 1 to 99">
+  </div>
+  <div class="col-md-6 col-12">
+    <label for="Running_Speed" class="form-label">Running Speed</label>
+    <input type="number" min="1" max="99" class="form-control" id="Running_Speed" name="Running_Speed"
+      formControlName="Running_Speed" required placeholder="Between 1 to 99">
+  </div>
+
+  <div class="col-md-6 col-12">
+    <label for="agility" class="form-label">Agility</label>
+    <input type="number" min="1" max="99" class="form-control" id="agility" name="agility" formControlName="agility"
+      required placeholder="Between 1 to 99">
+  </div>
+  <div class="col-md-6 col-12">
+    <label for="Reaction_Time" class="form-label">Reaction Time</label>
+    <input type="number" min="1" max="99" class="form-control" id="Reaction_Time" formControlName="Reaction_Time"
+      name="Reaction_Time" required placeholder="Between 1 to 99">
+  </div>
+
+
+  <div class="col-md-6 col-12">
+    <label for="balance" class="form-label">Balance</label>
+    <input type="number" min="1" max="99" class="form-control" id="balance" name="balance" formControlName="balance"
+      required placeholder="Between 1 to 99">
+  </div>
+  <div class="col-md-6 col-12">
+    <label for="strength" class="form-label">Strength</label>
+    <input type="number" min="1" max="99" class="form-control" id="strength" name="strength" formControlName="strength"
+      required placeholder="Between 1 to 99">
+  </div>
+
+  <div class="col-md-6 col-12">
+    <label for="aggression" class="form-label">Aggression</label>
+    <input type="number" min="1" max="99" class="form-control" id="aggression" name="aggression"
+      formControlName="aggression" required placeholder="Between 1 to 99">
+  </div>
+  <div class="col-md-6 col-12">
+    <label for="anticipation_index" class="form-label">Anticipation Index</label>
+    <input type="number" min="1" max="99" class="form-control" id="anticipation_index" name="anticipation_index"
+      formControlName="anticipation_index" required placeholder="Between 1 to 99">
+  </div>
+
+  <div class="col-md-6 col-12">
+    <label for="peripheral_vision" class="form-label">Peripheral Vision</label>
+    <input type="number" min="1" max="99" class="form-control" id="peripheral_vision" name="peripheral_vision"
+      formControlName="peripheral_vision" required placeholder="Between 1 to 99">
+  </div>
+
+  <div class="col-12 d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+
+
+</form>
