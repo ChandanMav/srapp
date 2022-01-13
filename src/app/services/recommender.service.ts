@@ -22,12 +22,20 @@ export class RecommenderService {
     this.data = empdata;
     console.log(this.data);
 
-    return this.http.post(baseUrl, this.data, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': "*"
-      }
-    });
+
+    var observable = new Observable((observer:any) => {
+        setTimeout(()=>  observer.next('Hey guys!') , 2000);
+     })
+
+     
+    // return this.http.post(baseUrl, this.data, {
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'Access-Control-Allow-Origin': "*"
+    //   }
+    // });
+
+    return observable;
   }
 
 
