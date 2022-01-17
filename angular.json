@@ -29,11 +29,14 @@
             "styles": [
               "node_modules/font-awesome/css/font-awesome.css",              
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/animate.css/animate.css"
               
             ],
             "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/wowjs/dist/wow.js",
+              "node_modules/fireworks-js/dist/fireworks.js"
             ]
           },
           "configurations": {

@@ -14,7 +14,10 @@ import { HealthParameterInputFormComponent } from './health-parameter-input-form
 import { BannerComponent } from './banner/banner.component';
 
 import { RecommenderService } from './services/recommender.service';
+import { RecommendEngineHomeComponent } from './recommend-engine-home/recommend-engine-home.component';
+import { HomeComponent } from './home/home.component';
 
+import { NgwWowModule } from 'ngx-wow';
 
 @NgModule({
   declarations: [
@@ -25,14 +28,17 @@ import { RecommenderService } from './services/recommender.service';
     ContentComponent,
     BottomContentComponent,
     HealthParameterInputFormComponent,
-    BannerComponent
+    BannerComponent,
+    RecommendEngineHomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgwWowModule
   ],
   providers: [RecommenderService],
   bootstrap: [AppComponent]

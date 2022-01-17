@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgwWowService } from 'ngx-wow';
 
 @Component({
   selector: 'app-bottom-content',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BottomContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private wowService: NgwWowService) {
+    this.wowService.init();
+  }
 
   ngOnInit(): void {
   }

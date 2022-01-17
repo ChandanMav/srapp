@@ -1,4 +1,4 @@
-<form class="row g-3 px-4" [formGroup]="frmRegister" (ngSubmit)="SaveEmployee(frmRegister.value)">
+<form #inputForm *ngIf="!submitted" class="row g-3 px-4" [formGroup]="frmRegister" (ngSubmit)="sportsPrediction(frmRegister.value)">
 
   <div class="col-12 col-md-6">
     <label for="name" class="form-label">Name</label>
@@ -71,3 +71,17 @@
 
 
 </form>
+
+
+<div *ngIf="submitted" class="d-flex justify-content-center">
+  <div class="row">
+    <div class="offset-3 col-12">
+      <div class="spinner-border" style="width: 5rem; height: 5rem;" role="status">
+
+      </div>
+    </div>
+    <div class="offset-3 col-12">
+      <span>Please wait!!!</span>
+    </div>
+  </div>
+</div>
