@@ -1,34 +1,35 @@
 body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
+    font-family: 'Roboto', sans-serif;
   }
-  
+
 html {
     height: -webkit-fill-available;
   }
-  
+
   main {
     display: flex;
     flex-wrap: nowrap;
     height: 100vh;
-    height: -webkit-fill-available;   
+    height: -webkit-fill-available;
     overflow-x: auto;
     overflow-y: hidden;
   }
-  
- 
+
+
   .bi {
     vertical-align: -.125em;
     pointer-events: none;
     fill: currentColor;
   }
-  
+
   .dropdown-toggle { outline: 0; }
-  
+
   .nav-flush .nav-link {
     border-radius: 0;
   }
-  
+
   .btn-toggle {
     display: inline-flex;
     align-items: center;
@@ -43,21 +44,21 @@ html {
     color: rgba(0, 0, 0, .85);
     background-color: #d2f4ea;
   }
-  
+
   .btn-toggle::before {
     width: 1.25em;
-    line-height: 0;   
+    line-height: 0;
     transition: transform .35s ease;
     transform-origin: .5em 50%;
   }
-  
+
   .btn-toggle[aria-expanded="true"] {
     color: rgba(0, 0, 0, .85);
   }
   .btn-toggle[aria-expanded="true"]::before {
     transform: rotate(90deg);
   }
-  
+
   .btn-toggle-nav a {
     display: inline-flex;
     padding: .1875rem .5rem;
@@ -69,11 +70,11 @@ html {
   .btn-toggle-nav a:focus {
     background-color: #d2f4ea;
   }
-  
+
   .scrollarea {
     overflow-y: auto;
   }
-  
+
   .fw-semibold { font-weight: 600; }
   .lh-tight { line-height: 1.25; }
 
@@ -81,3 +82,5 @@ html {
     color: #000;
 	 font-weight: bold;
   }
+
+

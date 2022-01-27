@@ -18,6 +18,14 @@ import { RecommendEngineHomeComponent } from './recommend-engine-home/recommend-
 import { HomeComponent } from './home/home.component';
 
 import { NgwWowModule } from 'ngx-wow';
+import { GroupComponent } from './group/group.component';
+import { PrescriptionComponent } from './prescription/prescription.component';
+import { UserProfileComponent } from './profile/user-profiles/user-profile/user-profile.component';
+import { UserProfilesComponent } from './profile/user-profiles/user-profiles.component';
+import { DndDirective } from './dnd.directive';
+import { GrpDndDirective } from './grp-dnd.directive';
+import { ChildComponent } from './group/child/child.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +38,15 @@ import { NgwWowModule } from 'ngx-wow';
     HealthParameterInputFormComponent,
     BannerComponent,
     RecommendEngineHomeComponent,
-    HomeComponent
+    HomeComponent,
+    GroupComponent,
+    PrescriptionComponent,
+    UserProfileComponent,
+    UserProfilesComponent,
+    DndDirective,
+    GrpDndDirective,
+    ChildComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

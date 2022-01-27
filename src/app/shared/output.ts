@@ -16,7 +16,7 @@ const NOTRECOMMENDED = {
 
 const RECOMMENDED = {
   "prediction": "Recommended",
-  "probablity": 0.89
+  // "probablity": 0.89
 };
 
 export const outputs: any = [

@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HealthParameter } from '../shared/healthp'
 
 import {outputs} from '../shared/output'
+import { GRPOutput } from '../shared/group.output.model';
 
 
 const baseUrl = 'http://54.166.223.227:5000/result';
@@ -14,6 +15,8 @@ const baseUrl = 'http://54.166.223.227:5000/result';
 export class RecommenderService {
 
   private data: HealthParameter;
+  grpOutputs = new Subject<GRPOutput[]>();
+
 
   constructor(private http: HttpClient) { }
 
@@ -34,7 +37,7 @@ export class RecommenderService {
     formData.append("anticipation_index", empdata.anticipation_index);
     formData.append("peripheral_vision", empdata.peripheral_vision);
 
-    console.log(formData);
+    // console.log(formData);
 
     var observable = new Observable((observer: any) => {
       let index = Math.random() > 0.5 ? 1 : 0;

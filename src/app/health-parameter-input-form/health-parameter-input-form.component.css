@@ -1,0 +1,9 @@
+.form-control.is-invalid, .was-validated .form-control:invalid{
+  background-image : none  !important
+}
+
+.form-container{
+  /* background-image: url('../../assets/form-bg.jpg'); */
+  background-color: rgba(255, 255, 255, 0.891);
+  background-blend-mode: overlay;
+}

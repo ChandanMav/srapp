@@ -1,0 +1,68 @@
+<h2 class="accordion-header" id="flush-headingOne">
+  <button
+    class="accordion-button collapsed"
+    type="button"
+    data-bs-toggle="collapse"
+    [attr.data-bs-target]="'#profile' + i"
+    aria-expanded="false"
+    aria-controls="flush-collapseOne"
+    [ngClass]="getClass()"
+  >
+    <div class="row" style="width: 97% !important; font-size: 12px">
+      <div class="col-4">{{ user_profile.sportstype | uppercase }}</div>
+      <div class="col-4 fw-bolder">{{ user_profile.result | uppercase }}</div>
+      <div class="col-4 text-end">
+        {{ user_profile.assessment_date | date }}
+      </div>
+    </div>
+  </button>
+</h2>
+<div
+  id="profile{{ i }}"
+  class="accordion-collapse collapse"
+  aria-labelledby="flush-headingOne"
+  data-bs-parent="#accordionFlush"
+  [ngClass]="i == 0 ? 'show' : ''"
+>
+  <div class="accordion-body" [ngClass]="getClass()">
+    <div class="table-responsive table-info">
+      <table class="table align-middle table-borderless" style="color: white">
+        <thead>
+          <th scope="col">BMI</th>
+          <th scope="col">Running Speed</th>
+          <th scope="col">Agility</th>
+          <th scope="col">Reaction Time</th>
+          <th scope="col">Balance</th>
+          <th scope="col">Strength</th>
+          <th scope="col">Aggression</th>
+          <th scope="col">Anticipation Index</th>
+          <th scope="col">Peripheral Vision</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="bmi{{ i }}">{{ user_profile.bmi }}</td>
+            <td id="Running_Speed{{ i }}">{{ user_profile.Running_Speed }}</td>
+            <td id="agility{{ i }}">{{ user_profile.agility }}</td>
+            <td id="Reaction_Time{{ i }}">{{ user_profile.Reaction_Time }}</td>
+            <td id="balance{{ i }}">{{ user_profile.balance }}</td>
+            <td id="strength{{ i }}">{{ user_profile.strength }}</td>
+            <td id="aggression{{ i }}">{{ user_profile.aggression }}</td>
+            <td id="anticipation_index{{ i }}">
+              {{ user_profile.anticipation_index }}
+            </td>
+            <td id="peripheral_vision{{ i }}">
+              {{ user_profile.peripheral_vision }}
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="10">
+              <button type="button" class="btn btn-primary btn-sm" (click)="tryIt()">Try It Again!</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</div>

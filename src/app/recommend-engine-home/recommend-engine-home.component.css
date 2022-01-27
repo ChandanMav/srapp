@@ -4,8 +4,9 @@ section {
 }
 
 #tabs{
-	
+
     margin-left: 16px;
+    font-size: 15px;
 }
 #tabs h6.section-title{
     color: black;
@@ -13,16 +14,15 @@ section {
 
 #tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: black;
-    
+
     border-color: transparent transparent #f3f3f3;
     border-bottom: 4px solid !important;
-    font-size: 20px;
     font-weight: bold;
 }
 #tabs .nav-tabs .nav-link {
     border: 1px solid transparent;
     border-top-left-radius: .25rem;
     border-top-right-radius: .25rem;
-  
-    font-size: 20px;
+
+
 }
