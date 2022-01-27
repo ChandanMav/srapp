@@ -15,6 +15,7 @@ export class GroupComponent implements OnInit, OnDestroy {
   message: string = '';
   filename: string;
   errorMessage: string;
+  submittedDateCount:number = 0;
 
   groups: {
     name: string;
@@ -66,10 +67,14 @@ export class GroupComponent implements OnInit, OnDestroy {
   }
 
   groupSubmit() {
+    this.submittedDateCount = this.items.length;
     this.isGroupSubmit = true;
+    this.message = " ";
     this.commonService.isGroupSubmit.next(true);
     let i = 0;
-    for (let item of this.groups) {
+
+    for (let p of this.items) {
+      let item = this.groups[p];
       let data: any = {};
       data.name = item.name;
       data.sportstype = 'Football';
@@ -86,31 +91,29 @@ export class GroupComponent implements OnInit, OnDestroy {
       this.recommenderService.sportsPrediction({ ...data }).subscribe({
         next: (res) => {
           const response: any = {};
+          response.index = p;
           if (res['prediction'] === 'Not Recommended') {
-            response.index = i;
             response.prediction = 'Not Recommended';
             response.imp_params = res['imp_params'];
             response.imp_params_label = res['imp_params_label'];
             this.responses.push(response);
           }
           if (res['prediction'] === 'Recommended') {
-            response.index = i;
             response.prediction = 'Recommended';
             response.imp_params = [];
             response.imp_params_label = [];
             this.responses.push(response);
           }
+          i++;
           console.log('___________________________');
-          console.log(i);
+          console.log(p);
           console.log(response);
           console.log('___________________________');
           this.recommenderService.grpOutputs.next(this.responses);
-          i++;
         },
       });
     }
-
-    //this.items = [];
+    this.items = [];
   }
   /**
    * on file drop handler
@@ -209,5 +212,14 @@ export class GroupComponent implements OnInit, OnDestroy {
 
   display() {
     // console.log(this.items)
+  }
+
+  exit() {
+    this.errorMessage = '';
+    this.message = '';
+    this.filename = '';
+    this.items = [];
+    this.isGroupSubmit = false;
+    this.responses = [];
   }
 }

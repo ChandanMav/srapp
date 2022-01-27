@@ -4,8 +4,12 @@
       <!-- <p class="text-align-center d-flex justify-content-center p-2">Please upload your prescription</p> -->
       <div class="col-12 col-md-12">
         <p style="text-align: start" [ngClass]="css()">{{ errorMessage }}</p>
-        <p style="text-align: start" [ngClass]="css()" *ngIf="message != ''">
-          {{ message }} - {{ filename }}
+        <p style="text-align: start" [ngClass]="css()" *ngIf="message != '' && !isGroupSubmit">
+          {{ message }} {{ filename }}
+        </p>
+
+        <p style="text-align: start" [ngClass]="css()" *ngIf="message != '' && (responses.length>0) && (responses.length == submittedDateCount)">
+           <span class="fa fa-download"></span> &nbsp; <a href="#!" onclick="return false;" target="_blank" > {{ filename | titlecase }}</a>
         </p>
       </div>
     </div>
@@ -88,7 +92,8 @@
     <div class=" bg-success text-dark bg-opacity-10" style="height: 1px;;" ></div>
     <div class="row mt-2">
       <div class="col-6 offset-3 d-flex justify-content-center">
-        <button type="button" class="btn btn-primary  btn-sm" style="height: 30px;width: 128px;" [disabled]="(items.length == 0) || isGroupSubmit" (click)="groupSubmit()">Submit</button>
+        <button type="button" class="btn btn-primary  btn-sm" style="height: 30px;width: 128px; margin-right: 6px;" [disabled]="(items.length == 0) || isGroupSubmit" (click)="groupSubmit()">Assessment</button>
+        <button type="button" class="btn btn-primary  btn-sm" style="height: 30px;width: 128px;" (click)="exit()">Exit</button>
       </div>
       <div class="col-3">
         <nav aria-label="Page navigation example">

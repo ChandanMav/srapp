@@ -78,7 +78,7 @@ export class ChildComponent implements OnInit, OnDestroy {
           if (d.index == this.i) {
             isDataAvaiable = true;
             this.isGroupSubmit = false;
-            this.isChecked = false;
+            //this.isChecked = false;
             this.responseData = d;
           }
         }

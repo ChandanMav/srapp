@@ -41,14 +41,14 @@
     {{ data.peripheral_vision }}
   </div>
   <div class="col-1 offset-1" id="checkbox{{ i }}">
-    <div *ngIf="isGroupSubmit && !isResponseArrived" class="text-primary spinner-border spinner-border-sm"
+    <div *ngIf="isGroupSubmit && !isResponseArrived && isChecked" class="text-primary spinner-border spinner-border-sm"
       role="status">
       <span class="visually-hidden">Loading...</span>
     </div>
-    <input *ngIf="!isGroupSubmit && !isResponseArrived" class="form-check-input me-1" type="checkbox"
+    <input *ngIf="!isGroupSubmit && (!isResponseArrived || !isChecked)" class="form-check-input me-1" type="checkbox"
       [checked]="isChecked" (change)="checkboxClicked(i)" value="i" aria-label="..." />
 
-    <button [ngClass]="getBtnClass()" class="btn-sm" *ngIf="isResponseArrived" type="button" data-bs-toggle="tooltip"
+    <button [ngClass]="getBtnClass()" class="btn-sm" *ngIf="isResponseArrived && isChecked" type="button" data-bs-toggle="tooltip"
       data-bs-placement="right" title="{{responseData.prediction}}" data-bs-toggle="modal"
       [attr.data-bs-target]="'#exampleModal'+ i">
       {{ responseData.prediction | shorten: 7 }}
