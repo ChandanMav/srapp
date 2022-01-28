@@ -9,7 +9,7 @@ import { Profiles } from 'src/app/shared/profiles';
 })
 export class UserProfilesComponent implements OnInit {
   user_profiles: Profile[] = [];
-  isFilterSelected:boolean = false;
+  isFilterSelected:boolean = true;
   constructor() {}
 
   ngOnInit(): void {
