@@ -9,7 +9,7 @@ export class ShortenPipe implements PipeTransform {
     if(value.length <  limit){
       return value;
     }
-    return value.substring(0, limit) + ".";
+    return  value.substring(0, limit).trim()+ ".";
   }
 
 }

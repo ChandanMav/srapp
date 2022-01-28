@@ -27,7 +27,7 @@ export class UserProfileComponent implements OnInit, AfterViewInit {
     if (arr.length != 0) {
       for (let element of arr) {
         var el: any = document.getElementById(element + this.i);
-        if (el !== null) {
+        if (el != null) {
           el.style.fontWeight = 'bold';
           el.style.color = 'red';
         }

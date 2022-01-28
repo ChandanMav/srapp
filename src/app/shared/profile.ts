@@ -1,4 +1,5 @@
 export class Profile {
+  name:string;
   sportstype: string;
   bmi: string;
   Running_Speed: string;

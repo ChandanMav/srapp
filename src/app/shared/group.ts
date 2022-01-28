@@ -36,7 +36,7 @@ export const Groups: any = [
     peripheral_vision: 80
   },
   {
-    name: "Kiran",
+    name: "Kiaan",
     bmi: Math.floor(Math.random() * 99) + 1,
     Running_Speed: Math.floor(Math.random() * 99) + 1,
     agility: Math.floor(Math.random() * 99) + 1,

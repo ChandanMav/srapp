@@ -9,7 +9,8 @@ import { Profiles } from 'src/app/shared/profiles';
 })
 export class UserProfilesComponent implements OnInit {
   user_profiles: Profile[] = [];
-  isFilterSelected:boolean = true;
+  isFilterSelected:boolean = false;
+  rowNum: string = "col-12";
   constructor() {}
 
   ngOnInit(): void {
@@ -18,5 +19,10 @@ export class UserProfilesComponent implements OnInit {
 
   showFilter(){
     this.isFilterSelected = !this.isFilterSelected;
+    if(this.isFilterSelected){
+      this.rowNum="col-10";
+    }else{
+      this.rowNum="col-12";
+    }
   }
 }

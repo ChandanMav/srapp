@@ -138,13 +138,13 @@ export class HealthParameterInputFormComponent
   sportsPrediction(value: HealthParameter) {
     //console.log(this.frmRegister);
     this.submitted = true;
-
+    this.errorMessage = '';
     if (this.frmRegister.invalid) {
       return;
     }
 
     this.recommenderService.sportsPrediction({ ...value }).subscribe({
-      next: (res) => {
+       next: (res) => {
         this.submitted = false;
         this.errorMessage = '';
         if (res['prediction'] === 'Not Recommended') {

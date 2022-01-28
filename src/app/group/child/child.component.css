@@ -11,3 +11,12 @@
     margin-top: -3px;
     padding: 3px;
 }
+
+.btn-close {display: none;}
+
+.report-table-modal{
+
+    color: black;
+    font-size: 12px;
+
+}

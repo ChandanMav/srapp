@@ -9,7 +9,8 @@
     [ngClass]="getClass()"
   >
     <div class="row" style="width: 90% !important; font-size: 12px">
-      <div class="col-5">{{ user_profile.sportstype | uppercase }}</div>
+      <div class="col-3">{{ user_profile.name | uppercase }}</div>
+      <div class="col-3">{{ user_profile.sportstype | uppercase }}</div>
       <div
         class="col-3 fw-bolder"
         [ngClass]="
@@ -20,7 +21,7 @@
       >
         {{ user_profile.result | uppercase }}
       </div>
-      <div class="col-4 text-end">
+      <div class="col-3 text-end">
         {{ user_profile.assessment_date | date }}
       </div>
     </div>
@@ -31,7 +32,6 @@
   class="accordion-collapse collapse"
   aria-labelledby="flush-headingOne"
   data-bs-parent="#accordionFlush"
-  [ngClass]="i == 0 ? 'show' : ''"
 >
   <div class="accordion-body" [ngClass]="getClass()">
     <div class="table-responsive table-info">
@@ -69,15 +69,15 @@
             <td colspan="10">
               <button
                 type="button"
-                style="margin-left: 38%; margin-top: 1%"
+                style="margin-left: 45%; margin-top: 1%"
                 [ngClass]="
                   user_profile.result === 'Not Recommended'
-                    ? 'btn btn-sm btn-warning'
+                    ? 'btn btn-sm btn-danger'
                     : 'btn btn-sm btn-success'
                 "
                 (click)="tryIt()"
               >
-                Try Again!
+               Re-Assess
               </button>
             </td>
           </tr>

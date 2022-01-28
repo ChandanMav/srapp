@@ -7,6 +7,7 @@ body {
   background-size: cover;
   background-blend-mode: overlay;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 68% 99%, 33% 100%, 0 99%);
+
 }
 
 .bg-color-app {

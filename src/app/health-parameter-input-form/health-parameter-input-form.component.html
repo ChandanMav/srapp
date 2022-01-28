@@ -1,29 +1,15 @@
 <div class="container-fluid form-container">
   <p *ngIf="errorMessage != ''" class="d-flex text-danger justify-content-center">{{errorMessage}}</p>
-  <form
-    #inputForm
-    *ngIf="!submitted"
-    class="row pt-5 g-2"
-    [formGroup]="frmRegister"
-    (ngSubmit)="sportsPrediction(frmRegister.value)"
-
-  >
+  <form #inputForm *ngIf="!submitted" class="row pt-5 g-2" [formGroup]="frmRegister"
+    (ngSubmit)="sportsPrediction(frmRegister.value)">
     <div class="col-12 col-md-6 gx-5">
       <div class="row g-3 align-items-center">
         <div class="col-12 col-md-5 text-start">
           <label for="name" class="form-label">Name</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            placeholder="Enter Name"
-            name="name"
-            formControlName="name"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['name'].touched && f['name'].errors }"
-          />
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="name"
+            autocomplete="off" [ngClass]="{ 'is-invalid': f['name'].touched && f['name'].errors }" />
           <!-- <div
             *ngIf="
               frmRegister.controls['name'].invalid &&
@@ -46,14 +32,9 @@
           <label for="inputSport" class="form-label">Select Sports</label>
         </div>
         <div class="col-12 col-md-7">
-          <select
-            id="inputSport"
-            class="form-select"
-            name="sportstype"
-            formControlName="sportstype"
-          >
+          <select id="inputSport" class="form-select" name="sportstype" formControlName="sportstype">
             <option value="Football">Football</option>
-            <option value="Cricket">Crictet</option>
+            <option value="Cricket">Cricket</option>
             <option value="Tennis">Tennis</option>
             <option value="BasketBall">BasketBall</option>
           </select>
@@ -67,19 +48,9 @@
           <label for="bmi" class="form-label">BMI</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="bmi"
-            name="bmi"
-            formControlName="bmi"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['bmi'].touched && f['bmi'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="bmi" name="bmi" formControlName="bmi" required
+            placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['bmi'].touched && f['bmi'].errors }" />
         </div>
       </div>
     </div>
@@ -89,19 +60,9 @@
           <label for="Running_Speed" class="form-label">Running Speed</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="Running_Speed"
-            name="Running_Speed"
-            formControlName="Running_Speed"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['Running_Speed'].touched && f['Running_Speed'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="Running_Speed" name="Running_Speed"
+            formControlName="Running_Speed" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['Running_Speed'].touched && f['Running_Speed'].errors }" />
         </div>
       </div>
     </div>
@@ -112,19 +73,9 @@
           <label for="agility" class="form-label">Agility</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="agility"
-            name="agility"
-            formControlName="agility"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['agility'].touched && f['agility'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="agility" name="agility"
+            formControlName="agility" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['agility'].touched && f['agility'].errors }" />
         </div>
       </div>
     </div>
@@ -134,19 +85,9 @@
           <label for="Reaction_Time" class="form-label">Reaction Time</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="Reaction_Time"
-            formControlName="Reaction_Time"
-            name="Reaction_Time"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['Reaction_Time'].touched && f['Reaction_Time'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="Reaction_Time" formControlName="Reaction_Time"
+            name="Reaction_Time" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['Reaction_Time'].touched && f['Reaction_Time'].errors }" />
         </div>
       </div>
     </div>
@@ -157,19 +98,9 @@
           <label for="balance" class="form-label">Balance</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="balance"
-            name="balance"
-            formControlName="balance"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['balance'].touched && f['balance'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="balance" name="balance"
+            formControlName="balance" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['balance'].touched && f['balance'].errors }" />
         </div>
       </div>
     </div>
@@ -179,19 +110,9 @@
           <label for="strength" class="form-label">Strength</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="strength"
-            name="strength"
-            formControlName="strength"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['strength'].touched && f['strength'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="strength" name="strength"
+            formControlName="strength" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['strength'].touched && f['strength'].errors }" />
         </div>
       </div>
     </div>
@@ -202,19 +123,9 @@
           <label for="aggression" class="form-label">Aggression</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="aggression"
-            name="aggression"
-            formControlName="aggression"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['aggression'].touched && f['aggression'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="aggression" name="aggression"
+            formControlName="aggression" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['aggression'].touched && f['aggression'].errors }" />
         </div>
       </div>
     </div>
@@ -226,19 +137,9 @@
           </label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="anticipation_index"
-            name="anticipation_index"
-            formControlName="anticipation_index"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['anticipation_index'].touched && f['anticipation_index'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="anticipation_index" name="anticipation_index"
+            formControlName="anticipation_index" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['anticipation_index'].touched && f['anticipation_index'].errors }" />
         </div>
       </div>
     </div>
@@ -246,39 +147,23 @@
     <div class="col-12 col-md-6 gx-5">
       <div class="row g-3 align-items-center">
         <div class="col-12 col-md-5 text-start">
-          <label for="peripheral_vision" class="form-label"
-            >Peripheral Vision</label
-          >
+          <label for="peripheral_vision" class="form-label">Peripheral Vision</label>
         </div>
         <div class="col-12 col-md-7">
-          <input
-            type="number"
-            min="1"
-            max="99"
-            class="form-control"
-            id="peripheral_vision"
-            name="peripheral_vision"
-            formControlName="peripheral_vision"
-            required
-            placeholder="Between 1 to 99"
-            autocomplete="off"
-            [ngClass]="{ 'is-invalid': f['peripheral_vision'].touched && f['peripheral_vision'].errors }"
-          />
+          <input type="number" min="1" max="99" class="form-control" id="peripheral_vision" name="peripheral_vision"
+            formControlName="peripheral_vision" required placeholder="Between 1 to 99" autocomplete="off"
+            [ngClass]="{ 'is-invalid': f['peripheral_vision'].touched && f['peripheral_vision'].errors }" />
         </div>
       </div>
     </div>
 
     <div class="col-12 d-flex justify-content-center mt-5">
-      <button
-        type="submit"
-        class="btn btn-primary"
-        style="margin-right: 10px"
-        [disabled]="frmRegister.invalid"
-      >
+      <button type="submit" class="btn btn-primary btn-sm" style="margin-right: 10px;width: 8vw;"
+        [disabled]="frmRegister.invalid">
         Submit
       </button>
 
-      <button type="button" class="btn btn-primary" (click)="clear()">
+      <button type="button" class="btn btn-primary btn-sm" style="margin-right: 10px;width: 8vw;" (click)="clear()">
         Reset
       </button>
     </div>
@@ -287,11 +172,7 @@
   <div *ngIf="submitted" class="d-flex justify-content-center">
     <div class="row">
       <div class="offset-3 col-12">
-        <div
-          class="spinner-border"
-          style="width: 5rem; height: 5rem"
-          role="status"
-        ></div>
+        <div class="spinner-border" style="width: 5rem; height: 5rem" role="status"></div>
       </div>
       <div class="offset-3 col-12">
         <span>Please wait!!!</span>

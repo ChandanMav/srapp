@@ -4,12 +4,12 @@
       <!-- <p class="text-align-center d-flex justify-content-center p-2">Please upload your prescription</p> -->
       <div class="col-12 col-md-12">
         <p style="text-align: start" [ngClass]="css()">{{ errorMessage }}</p>
-        <p style="text-align: start" [ngClass]="css()" *ngIf="message != '' && !isGroupSubmit">
+        <p style="text-align: start" [ngClass]="css()" *ngIf="(message != '' && !isGroupSubmit) || !(responses.length == submittedDateCount)">
           {{ message }} {{ filename }}
         </p>
 
         <p style="text-align: start" [ngClass]="css()" *ngIf="message != '' && (responses.length>0) && (responses.length == submittedDateCount)">
-           <span class="fa fa-download"></span> &nbsp; <a href="#!" onclick="return false;" target="_blank" > {{ filename | titlecase }}</a>
+           <span class="fa fa-download"></span> &nbsp; <a href="#!" onclick="return false;" target="_blank" > Report</a>
         </p>
       </div>
     </div>
@@ -81,7 +81,7 @@
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Aggression'| shorten:8}}</div>
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Anticipation Index'| shorten:8}}</div>
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Peripheral Vision' | shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Sport'| shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px; padding-left: 0px;padding-right: 0px;">Select Sport <span class="	fa fa-level-down"></span></div>
       <div class="col-1" style="padding-top: 2px;">
         <span [ngClass]="getClass()" (click)="switchAll()" style="padding-right: 0%;margin-left: 45px;"  *ngIf="!isGroupSubmit"></span> </div>
     </div>
@@ -94,8 +94,8 @@
     <div class=" bg-success text-dark bg-opacity-10" style="height: 1px;;" ></div>
     <div class="row mt-2">
       <div class="col-6 offset-3 d-flex justify-content-center">
-        <button type="button" class="btn btn-primary  btn-sm" style="height: 30px;width: 128px; margin-right: 6px;" [disabled]="(items.length == 0) || isGroupSubmit" (click)="groupSubmit()">Assessment</button>
-        <button type="button" class="btn btn-primary  btn-sm" style="height: 30px;width: 128px;" (click)="exit()">Exit</button>
+        <button type="button" class="btn btn-warning  btn-sm wow  " style="height: 30px;width: 128px; margin-right: 6px;" [disabled]="(items.length == 0) || isGroupSubmit" (click)="groupSubmit()">Run Assessment</button>
+        <button type="button" class="btn btn-secondary  btn-sm" style="height: 30px;width: 128px;" (click)="exit()">Exit</button>
       </div>
       <div class="col-3">
         <nav aria-label="Page navigation example">

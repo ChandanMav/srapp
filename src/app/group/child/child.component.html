@@ -1,26 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
   <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
     <path
-      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"
-    />
+      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
   </symbol>
   <symbol id="info-fill" fill="currentColor" viewBox="0 0 16 16">
     <path
-      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"
-    />
+      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
   </symbol>
-  <symbol
-    id="exclamation-triangle-fill"
-    fill="currentColor"
-    viewBox="0 0 16 16"
-  >
+  <symbol id="exclamation-triangle-fill" fill="currentColor" viewBox="0 0 16 16">
     <path
-      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-    />
+      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
   </symbol>
 </svg>
 
-<div class="row  gy-2">
+<div class="row gx-4 gy-2">
   <div class="col-1" id="name{{ i }}">{{ data.name }}</div>
   <div class="col-1" id="bmi{{ i }}">{{ data.bmi }}</div>
   <div class="col-1" id="Running_Speed{{ i }}">
@@ -48,188 +41,199 @@
     {{ data.peripheral_vision }}
   </div>
   <div class="col-1 col-md-1">
-    <select
-      id="inputSport"
-      class="form-select"
-      name="sportstype"
-      style="width: 99px;height: 36px;margin-top: -5px;font-size: 13px;"
-    >
+    <select id="inputSport" class="form-select" name="sportstype"
+      style="width: 99px; height: 36px; margin-top: -5px; font-size: 13px">
       <option selected value="Football">Football</option>
-      <option value="Cricket">Crictet</option>
+      <option value="Cricket">Cricket</option>
       <option value="Tennis">Tennis</option>
       <option value="BasketBall">BasketBall</option>
     </select>
   </div>
   <div class="col-1" id="checkbox{{ i }}">
-    <div
-      *ngIf="isGroupSubmit && !isResponseArrived && isChecked"
-      class="text-primary spinner-border spinner-border-sm"
-      role="status"
-      style="margin-top: -5px;margin-left: 53px;"
-    >
+    <div *ngIf="isGroupSubmit && !isResponseArrived && isChecked" class="text-primary spinner-border spinner-border-sm"
+      role="status" style="margin-top: -5px; margin-left: 53px">
       <span class="visually-hidden">Loading...</span>
     </div>
-    <input
-      *ngIf="!isGroupSubmit && (!isResponseArrived || !isChecked)"
-      class="form-check-input me-1"
-      type="checkbox"
-      [checked]="isChecked"
-      (change)="checkboxClicked(i)"
-      value="i"
-      aria-label="..."
-      style="margin-left: 69px;"
-    />
+    <input *ngIf="!isGroupSubmit && (!isResponseArrived || !isChecked)" class="form-check-input me-1" type="checkbox"
+      [checked]="isChecked" (change)="checkboxClicked(i)" value="i" aria-label="..." style="margin-left: 69px" />
 
-    <button
-      [ngClass]="getBtnClass()"
-      class="btn-sm"
-      *ngIf="isResponseArrived && isChecked"
-      type="button"
-      data-bs-toggle="tooltip"
-      data-bs-placement="right"
-      title="{{ responseData.prediction }}"
-      data-bs-toggle="modal"
-      [attr.data-bs-target]="'#exampleModal' + i"
-    >
+    <button [ngClass]="getBtnClass()" class="btn-sm" *ngIf="isResponseArrived && isChecked" type="button"
+      data-bs-toggle="tooltip" data-bs-placement="right" title="{{ responseData.prediction }}" data-bs-toggle="modal"
+      [attr.data-bs-target]="'#exampleModal' + i">
       {{ responseData.prediction | shorten: 7 }}
     </button>
   </div>
 </div>
 
 <!-- Modal -->
-<div
-  *ngIf="isResponseArrived"
-  class="modal fade"
-  id="exampleModal{{ i }}"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
-  #modelElemRef
->
-  <div class="modal-dialog">
+<div *ngIf="isResponseArrived" class="modal fade" id="exampleModal{{ i }}" tabindex="-1"
+  aria-labelledby="exampleModalLabel" aria-hidden="true" #modelElemRef>
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Football - {{ responseData.prediction }}
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <div class="col-1">
+          <img src="../../../assets/child.jpeg" class="img-fluid rounded-circle" style="max-width: 27px" />
+        </div>
+        <div class="col-7 fs-4 d-flex justify-content-center">
+          Recommendation Report
+        </div>
+        <div class="col-2 d-flex justify-content-end">
+          <span class="fa fa-user"></span>&nbsp; {{ data.name | titlecase }}
+        </div>
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="container text-center">
+        <div class="container">
           <div class="row">
-            <div class="col-md-2 col-12">
-              <img
-                src="../../../assets/child.jpeg"
-                class="img-fluid"
-                style="border-radius: 50%; max-width: 43px"
-              />
+            <div class="col-md-4 col-12">
+              <div class="row">
+                <div class="col-12">
+                  <!-- Profile Details -->
+                  <div id="profile-detail">
+                    <table class="table report-table-modal">
+                      <tbody>
+                        <tr>
+                          <th scope="row">BMI</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('bmi')">
+                            {{ data.bmi }}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Running Speed</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('Running_Speed')">
+                            {{ data.Running_Speed }}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Agility</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('agility')">
+                            {{ data.agility }}
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">Reaction Time</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('Reaction_Time')">
+                            {{ data.Reaction_Time }}
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">Balance</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('balance')">
+                            {{ data.balance }}
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">Strength</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('strength')">
+                            {{ data.strength }}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Aggression</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('aggression')">
+                            {{ data.aggression }}
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Anticipation Index</th>
+                          <td [ngClass]="
+                          getNotRecommendedKeyCSS('anticipation_index')
+                        ">
+                            {{ data.anticipation_index }}
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">Peripheral Vision</th>
+                          <td [ngClass]="getNotRecommendedKeyCSS('peripheral_vision')">
+                            {{ data.peripheral_vision }}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="col-12">
+
+                  <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-primary btn-sm" (click)="tryIt(modelRef)">
+                       New Assessment
+                    </button>
+                    <button type="button" class="btn btn-success btn-sm" (click)="save()">
+                      Save
+                    </button>
+                    <button type="button" #modelRef class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- End of Profile details -->
             </div>
-            <div class="col-md-10 col-12">
-              <h5
-                class="modal-title mt-3"
-                style="font-size: 13px !important"
-                id="exampleModalLabel"
-              >
-                Hi <b>{{ data.name | titlecase }}</b
-                >:
-                {{
+            <div class="col-md-8 col-12">
+              <div class="card text-center">
+                <div class="card-header"
+                  [ngClass]="responseData.prediction === 'Recommended' ? 'alert alert-primary' : 'alert alert-danger'"
+                  role="alert">
+                  Football
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ responseData.prediction }}</h5>
+                  <figure>
+                    <blockquote class="blockquote" style="font-size: 12px;">
+                      <p>
+                        2018 FIFA World Cup final was watched by 1.1 billion
+                        people around the world, becoming the most-watched
+                        competition in the globe.
+                      </p>
+                    </blockquote>
+
+                    <figcaption class="blockquote-footer">
+                      <cite title="Source Title">topmediadvertising</cite>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="card-footer text-muted">
+                  {{
                   responseData.prediction === "Recommended"
-                    ? "Its time to get into training pitch!"
-                    : "Football is far but
-                not too much. Please work on the below highlighted parameters!"
-                }}
-              </h5>
+                  ? "Its time to get into training pitch!"
+                  : "Football is far but
+                  not too much. Please work on the below highlighted parameters!"
+                  }}
+                </div>
+              </div>
+
+
+              <div class="card mt-2" style="max-width: 240;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src='../../../assets/interest1.jpeg' class="img-fluid rounded-start h-100" alt="">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Other Sports Recommendation</h5>
+                      <div class="card-text">
+                        <div class="alert alert-success" role="alert">
+                          Cricket
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                          Tennis
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-
-          <!-- Profile Details -->
-          <div id="profile-detail">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <th scope="row">BMI</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('bmi')">
-                    {{ data.bmi }}
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Running Speed</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('Running_Speed')">
-                    {{ data.Running_Speed }}
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Agility</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('agility')">
-                    {{ data.agility }}
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">Reaction Time</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('Reaction_Time')">
-                    {{ data.Reaction_Time }}
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">Balance</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('balance')">
-                    {{ data.balance }}
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">Strength</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('strength')">
-                    {{ data.strength }}
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Aggression</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('aggression')">
-                    {{ data.aggression }}
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Anticipation Index</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('anticipation_index')">
-                    {{ data.anticipation_index }}
-                  </td>
-                </tr>
-
-                <tr>
-                  <th scope="row">Peripheral Vision</th>
-                  <td [ngClass]="getNotRecommendedKeyCSS('peripheral_vision')">
-                    {{ data.peripheral_vision }}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- End of Profile details -->
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" (click)="save()">
-          Save
-        </button>
-        <button
-          type="button"
-          #modelRef
-          class="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          Close
-        </button>
-        <button type="button" class="btn btn-primary" (click)="tryIt(modelRef)">
-          Try New Assessment
-        </button>
       </div>
     </div>
   </div>

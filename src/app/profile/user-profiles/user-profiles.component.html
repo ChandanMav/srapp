@@ -1,7 +1,6 @@
-<section class="container pt-2">
-  <!-- <p class="text-align-center d-flex justify-content-center p-1">Recommendation History</p> -->
-  <div class="upper-content p-2 mb-2">
-    <div class="form-check form-switch">
+<section class="pt-1">
+  <div class="row">
+    <div class="col-2 form-check form-switch" style="padding-left: 52px;font-size: 12px;">
       <input
         class="form-check-input"
         type="checkbox"
@@ -11,125 +10,172 @@
         (change)="showFilter()"
       />
       <label class="form-check-label" for="flexSwitchCheckChecked"
-        >Choose Filters</label
+        >Enable Filters</label
       >
     </div>
-
-    <div class="row border" *ngIf="isFilterSelected">
-      <div class="col-3 d-flex align-items-center">
-        <select id="inputState" class="form-select">
-          <option selected>--Search By Sport--</option>
-          <option value="Football">Football</option>
-          <option value="Tennis">Tennis</option>
-          <option value="Cricket">Cricket</option>
-          <option value="BasketBall">BasketBall</option>
-        </select>
-        <div class="vl"></div>
-      </div>
-
-      <!-- <div class="col-6">
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio1"
-            value="Recommended"
-          />
-          <label class="form-check-label" for="inlineRadio1">Recommended</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="inlineRadioOptions"
-            id="inlineRadio2"
-            value="Not Recommended"
-          />
-          <label class="form-check-label" for="inlineRadio2"
-            >Not Recommended</label
-          >
-        </div>
-      </div> -->
-
-      <div class="col-6 mt-2">
-        <div class="row mb-3">
-          <label for="inputEmail3" class="col-sm-4 col-form-label"
-            >Start date</label
-          >
-          <div class="col-sm-8">
-            <input type="date" class="form-control" id="inputEmail3" />
+    <div class="col-3 offset-7 d-flex justify-content-end">
+      <span class="fa fa-lg fa-cloud-download Download"></span>
+      &nbsp;&nbsp;
+      <span class="fa fa-lg fa-print"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 border-top pt-2 align-middle" *ngIf="isFilterSelected">
+      <div class="row upper-content gy-3">
+        <div class="col-12" *ngIf="isFilterSelected">
+          <div class="d-flex align-items-center">
+            <select id="inputState" class="form-select form-select-sm">
+              <option selected>Search By Sport</option>
+              <option value="Football">Football</option>
+              <option value="Tennis">Tennis</option>
+              <option value="Cricket">Cricket</option>
+              <option value="BasketBall">BasketBall</option>
+            </select>
           </div>
         </div>
-        <div class="row mb-3">
-          <label for="inputPassword3" class="col-sm-4 col-form-label"
-            >End Date</label
-          >
-          <div class="col-sm-8">
-            <input type="date" class="form-control" id="inputPassword3" />
-          </div>
-        </div>
-        <!-- <div class="vl"></div> -->
-      </div>
 
-      <div class="col-3 d-flex flex-row-reverse d-flex align-items-center">
-        <div class="row gy-2">
-          <div class="col-12">
-            <button type="button" class="btn btn-primary w-100 fw-bold btn-sm">
-              <span class="fa fa-location-arrow"></span> Apply
-            </button>
-          </div>
-          <div class="col-12">
+        <div class="col-12 d-flex align-items-center">
+          <div>
+            <input
+              type="text"
+              class="form-control form-select-sm"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Search By Name"
+            />
             <div
-              class="btn-group w-100"
-              role="group"
-              aria-label="Basic mixed styles example"
+              id="emailHelp"
+              class="form-text d-flex justify-content-center align-middle"
             >
-              <button type="button" class="btn btn-primary btn-sm">
-                <span class="fa fa-cloud-download Download"></span> Download
-              </button>
+              case insensitive
+            </div>
+            <div class="vl"></div>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="Recommended"
+            />
+            <label class="form-check-label form-select-sm" for="inlineRadio1"
+              >Recommended</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="Not Recommended"
+            />
+            <label class="form-check-label form-select-sm" for="inlineRadio2"
+              >Not Recommended</label
+            >
+          </div>
+        </div>
+
+        <div class="col-12 mt-2">
+          <div class="row gx-2 mb-3">
+            <label for="name" class="col-sm-3 col-form-label form-select-sm"
+              >Start</label
+            >
+            <div class="col-sm-9">
+              <input
+                type="date"
+                class="form-control form-select-sm"
+                id="inputEmail3"
+                style="font-size: 11px"
+              />
+            </div>
+          </div>
+          <div class="row mb-3 gx-2">
+            <label
+              for="inputPassword3"
+              class="col-sm-3 col-form-label form-select-sm"
+              >End</label
+            >
+            <div class="col-sm-9">
+              <input
+                type="date"
+                class="form-control form-select-sm"
+                id="inputPassword3"
+                style="font-size: 11px"
+              />
+            </div>
+          </div>
+          <!-- <div class="vl"></div> -->
+        </div>
+
+        <div class="col-12">
+          <div class="row gx-2">
+            <div class="col-5 offset-1">
               <button
                 type="button"
-                class="btn btn-info btn-sm"
-                style="width: 109px"
+                class="btn btn-primary w-100 fw-bold btn-sm"
               >
-                <span class="fa fa-print"></span> Print
+                Apply
+              </button>
+            </div>
+
+            <div class="col-6 d-flex align-items-start">
+              <button
+                type="button"
+                class="btn btn-secondary w-100 fw-bold btn-sm"
+              >
+                Reset
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="lower-content">
-    <div class="row">
-      <div class="col-12">
-        <div class="accordion accordion-flush" id="accordionFlush">
-          <div
-            class="accordion-item"
-            *ngFor="let user_profile of user_profiles; let i = index"
-          >
-            <app-user-profile
-              [profile]="user_profile"
-              [i]="i"
-            ></app-user-profile>
+    <div [ngClass]="rowNum">
+      <div class="lower-content">
+        <div class="row">
+          <div class="col-12">
+            <div class="accordion accordion-flush" id="accordionFlush">
+              <div class="accordion-item">
+                <div class="row mt-3 container-fluid report-title">
+                  <div class="col-2 fs-6 d-flex justify-content-start">Name</div>
+                  <div class="col-3 fs-6 d-flex " style="margin-left: 4%;">Sport Type</div>
+                  <div class="col-3 fs-6 d-flex justify-content-start ">Recommendation</div>
+                  <div class="col-3 fs-6 d-flex justify-content-end">Assessment Date</div>
+                </div>
+              </div>
+              <div
+                class="accordion-item"
+                *ngFor="let user_profile of user_profiles; let i = index"
+              >
+                <app-user-profile
+                  [profile]="user_profile"
+                  [i]="i"
+                ></app-user-profile>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <nav aria-label="Page navigation example" style="margin-top: 10px">
+        <ul class="pagination justify-content-center">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
-
-  <nav aria-label="Page navigation example" style="margin-top: 10px;">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled">
-        <a class="page-link">Previous</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav>
+  <!-- <p class="text-align-center d-flex justify-content-center p-1">Recommendation History</p> -->
 </section>

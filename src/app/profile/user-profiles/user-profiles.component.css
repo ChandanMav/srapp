@@ -10,3 +10,11 @@
     margin: 4px;
     height: 100%;
 }
+
+.report-title{
+  width: 100%;
+    font-size: 12px;
+    color: white;
+    background-color: dodgerblue;
+    margin-left: 0px;
+}
