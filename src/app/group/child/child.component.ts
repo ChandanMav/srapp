@@ -95,6 +95,7 @@ export class ChildComponent implements OnInit, OnDestroy {
 
   tryIt(modelRef: any) {
     modelRef.click();
+    this.commonService.isGroupSubmit.next(false);
     this.router.navigate(['/recommendation'], {
       relativeTo: this.activatedRoute,
       queryParams: this.data,

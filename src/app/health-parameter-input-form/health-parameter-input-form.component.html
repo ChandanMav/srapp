@@ -1,4 +1,5 @@
 <div class="container form-container">
+  <p *ngIf="errorMessage != ''" class="d-flex text-danger justify-content-center">{{errorMessage}}</p>
   <form
     #inputForm
     *ngIf="!submitted"

@@ -105,10 +105,10 @@ export class GroupComponent implements OnInit, OnDestroy {
             this.responses.push(response);
           }
           i++;
-          console.log('___________________________');
-          console.log(p);
-          console.log(response);
-          console.log('___________________________');
+          // console.log('___________________________');
+          // console.log(p);
+          // console.log(response);
+          // console.log('___________________________');
           this.recommenderService.grpOutputs.next(this.responses);
         },
       });
@@ -215,6 +215,7 @@ export class GroupComponent implements OnInit, OnDestroy {
   }
 
   exit() {
+    this.commonService.isGroupSubmit.next(false);
     this.errorMessage = '';
     this.message = '';
     this.filename = '';

@@ -33,6 +33,7 @@ export class HealthParameterInputFormComponent
   isFormError: boolean;
   formInitialValues: any;
   queryParamSubscription: Subscription;
+  errorMessage:string="";
 
   @ViewChild('inputForm') inputForm: ElementRef;
 
@@ -145,6 +146,7 @@ export class HealthParameterInputFormComponent
     this.recommenderService.sportsPrediction({ ...value }).subscribe({
       next: (res) => {
         this.submitted = false;
+        this.errorMessage = '';
         if (res['prediction'] === 'Not Recommended') {
           let html =
             "<div class='row container'><div class='offset-3 col-9 pt-4'><table><tr><td>";
@@ -217,6 +219,7 @@ export class HealthParameterInputFormComponent
       error: (e) => {
         console.error(e);
         this.submitted = false;
+        this.errorMessage = e;
         this.clear();
       },
     });

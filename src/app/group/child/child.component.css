@@ -1,9 +1,13 @@
 .recommended{
-  width: 100px;
-  margin-left: -35px;
+  width: 73px;
+  margin-left: 22px;
+  margin-top: -3px;
+  padding: 3px;
 }
 
 .not-recommended{
-  width: 100px;
-  margin-left: -35px;
+  width: 73px;
+    margin-left: 22px;
+    margin-top: -3px;
+    padding: 3px;
 }

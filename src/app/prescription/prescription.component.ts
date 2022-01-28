@@ -20,7 +20,7 @@ export class PrescriptionComponent implements OnInit {
     strength: 98,
     aggression: 33,
     anticipation_index: 32,
-    peripheral_vision: 89,
+    peripheral_vision: 89
   };
   isFileParsing: boolean = false;
 

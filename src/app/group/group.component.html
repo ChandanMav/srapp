@@ -1,5 +1,5 @@
 <div class="container mt-2">
-  <div class="row">
+  <div class="row" style="height: 47px;">
     <div class="col-12 col-md-8">
       <!-- <p class="text-align-center d-flex justify-content-center p-2">Please upload your prescription</p> -->
       <div class="col-12 col-md-12">
@@ -69,19 +69,20 @@
     </div>
   </div>
   <div *ngIf="message != ''" class="mt-2">
-    <div class="row   gx-2 bg-primary text-white fw-bold text-capitalize text-wrap text-center" style="font-size: 13px;">
-      <div class="col-1" style="padding-top:10px;" scope="col">Name</div>
-      <div class="col-1 pt-10" style="padding-top:10px;">BMI</div>
-      <div class="col-1">Running Speed</div>
-      <div class="col-1 pt-10" style="padding-top:10px;">Agility</div>
-      <div class="col-1">Reaction Time</div>
-      <div class="col-1 pt-10" style="padding-top:10px;">Balance</div>
-      <div class="col-1 pt-10" style="padding-top:10px;">Strength</div>
-      <div class="col-1 pt-10" style="padding-top:10px;">Aggression</div>
-      <div class="col-1">Anticipation Index</div>
-      <div class="col-1">Peripheral Vision</div>
-      <div class="col-1 offset-1" style="padding-top:10px;">
-        <span [ngClass]="getClass()" (click)="switchAll()" style="padding-right : 19%"  *ngIf="!isGroupSubmit"></span> </div>
+    <div class="row gy-2 bg-primary text-white fw-bold text-capitalize text-wrap text-center" style="font-size: 13px; height: 39px;">
+      <div class="col-1 pt-10" style="padding-top: 2px;" scope="col">{{'Name' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'BMI'  | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Running Speed' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Agility' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Reaction Time' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Balance' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Strength' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Aggression'| shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Anticipation Index'| shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Peripheral Vision' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Sport'| shorten:8}}</div>
+      <div class="col-1" style="padding-top: 2px;">
+        <span [ngClass]="getClass()" (click)="switchAll()" style="padding-right: 0%;margin-left: 45px;"  *ngIf="!isGroupSubmit"></span> </div>
     </div>
 
     <ul class="list-group list-group-flush p-2 text-dark bg-opacity-10">
