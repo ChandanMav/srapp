@@ -10,7 +10,7 @@ import {
   ViewChild,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { fromEvent, Subscription } from 'rxjs';
 import { RecommenderService } from 'src/app/services/recommender.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { GRPOutput } from 'src/app/shared/group.output.model';
@@ -58,6 +58,7 @@ export class ChildComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnDestroy(): void {
+    this.commonService.isGroupSubmit.next(false);
     this.selectAllSubject.unsubscribe();
     this.isGroupSubmitSubject.unsubscribe();
     this.grpOutputsSubject.unsubscribe();
@@ -83,8 +84,11 @@ export class ChildComponent implements OnInit, OnDestroy {
           }
         }
         this.isResponseArrived = isDataAvaiable;
+
       },
     });
+
+
   }
 
   getBtnClass(): string {
@@ -103,6 +107,7 @@ export class ChildComponent implements OnInit, OnDestroy {
   }
 
   save() {
+    this.commonService.isGroupSubmit.next(false);
     Swal.fire({
       position: 'top-end',
       icon: 'success',
@@ -113,17 +118,17 @@ export class ChildComponent implements OnInit, OnDestroy {
     })
   }
 
-  getNotRecommendedKeyCSS(key:string):string{
-       return this.isKeyFound(key) ? "text-danger" : ""
+  getNotRecommendedKeyCSS(key: string): string {
+    return this.isKeyFound(key) ? "text-danger" : ""
   }
 
-  isKeyFound(key: string):boolean {
+  isKeyFound(key: string): boolean {
     if (this.responseData.prediction === 'Not Recommended') {
-       for(let k of this.responseData.imp_params_label){
-          if(k == key){
-            return true;
-          }
-       }
+      for (let k of this.responseData.imp_params_label) {
+        if (k == key) {
+          return true;
+        }
+      }
     }
     return false;
   }

@@ -23,7 +23,7 @@ export class RecommenderService {
   public sportsPrediction(empdata: HealthParameter): Observable<any> {
 
 
-    console.log(empdata);
+    //console.log(empdata);
 
     var formData = new FormData();
     formData.append("sportstype", empdata.sportstype);
@@ -55,7 +55,7 @@ export class RecommenderService {
 
 
   handleError(erroResp: HttpErrorResponse): Observable<any> {
-    console.log(erroResp);
+    //console.log(erroResp);
     let errorMsg: string = 'An error occured. Please try after sometime!';
 
     return throwError(() => errorMsg);

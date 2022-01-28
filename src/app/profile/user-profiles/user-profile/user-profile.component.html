@@ -8,9 +8,18 @@
     aria-controls="flush-collapseOne"
     [ngClass]="getClass()"
   >
-    <div class="row" style="width: 97% !important; font-size: 12px">
-      <div class="col-4">{{ user_profile.sportstype | uppercase }}</div>
-      <div class="col-4 fw-bolder">{{ user_profile.result | uppercase }}</div>
+    <div class="row" style="width: 90% !important; font-size: 12px">
+      <div class="col-5">{{ user_profile.sportstype | uppercase }}</div>
+      <div
+        class="col-3 fw-bolder"
+        [ngClass]="
+          user_profile.result === 'Not Recommended'
+            ? 'text-dark'
+            : 'text-success'
+        "
+      >
+        {{ user_profile.result | uppercase }}
+      </div>
       <div class="col-4 text-end">
         {{ user_profile.assessment_date | date }}
       </div>
@@ -58,7 +67,18 @@
         <tfoot>
           <tr>
             <td colspan="10">
-              <button type="button" class="btn btn-primary btn-sm" (click)="tryIt()">Try It Again!</button>
+              <button
+                type="button"
+                style="margin-left: 38%; margin-top: 1%"
+                [ngClass]="
+                  user_profile.result === 'Not Recommended'
+                    ? 'btn btn-sm btn-warning'
+                    : 'btn btn-sm btn-success'
+                "
+                (click)="tryIt()"
+              >
+                Try Again!
+              </button>
             </td>
           </tr>
         </tfoot>

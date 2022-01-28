@@ -1,5 +1,5 @@
-<div class="container mt-2">
-  <div class="row" style="height: 47px;">
+<div class="mt-1">
+  <div class="row" >
     <div class="col-12 col-md-8">
       <!-- <p class="text-align-center d-flex justify-content-center p-2">Please upload your prescription</p> -->
       <div class="col-12 col-md-12">
@@ -19,6 +19,7 @@
           href="../../assets/file/grp_record.xlsx"
           target="_blank"
           class="btn btn-primary"
+          style="font-size: 10px;"
           ><span class="fa fa-file-pdf-o"></span> &nbsp; Download Template</a
         >
       </div>
@@ -85,8 +86,8 @@
         <span [ngClass]="getClass()" (click)="switchAll()" style="padding-right: 0%;margin-left: 45px;"  *ngIf="!isGroupSubmit"></span> </div>
     </div>
 
-    <ul class="list-group list-group-flush p-2 text-dark bg-opacity-10">
-      <li class="list-group-item" *ngFor="let child of groups; let i = index">
+    <ul class="list-group list-group-flush p-2 text-dark bg-opacity-10 bg-color-app">
+      <li class="list-group-item bg-color-app" *ngFor="let child of groups; let i = index">
         <app-child [data]="child" [i]="i" (checkedIn)="onClick($event)" (checkedout)="onClick($event)"></app-child>
       </li>
     </ul>

@@ -2,8 +2,12 @@
   background-image : none  !important
 }
 
+.form-label{
+  font-weight: bold;
+  font-family: cursive;
+}
 .form-container{
   /* background-image: url('../../assets/form-bg.jpg'); */
-  background-color: rgba(255, 255, 255, 0.891);
-  background-blend-mode: overlay;
+  /* background-color: rgba(255, 255, 255, 0.891);
+  background-blend-mode: overlay; */
 }

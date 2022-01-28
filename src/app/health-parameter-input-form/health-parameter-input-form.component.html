@@ -1,4 +1,4 @@
-<div class="container form-container">
+<div class="container-fluid form-container">
   <p *ngIf="errorMessage != ''" class="d-flex text-danger justify-content-center">{{errorMessage}}</p>
   <form
     #inputForm
@@ -6,7 +6,7 @@
     class="row pt-5 g-2"
     [formGroup]="frmRegister"
     (ngSubmit)="sportsPrediction(frmRegister.value)"
-    style="height: 70vh;"
+
   >
     <div class="col-12 col-md-6 gx-5">
       <div class="row g-3 align-items-center">

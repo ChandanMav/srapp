@@ -1,24 +1,32 @@
 .bg-rcmd{
- background-color: #0033FF;
- color: white;
+ background-color: skyblue;
+ color: black;
  font-size: 15px;
 }
 
 .bg-rcmd.accordion-body{
-  background-color: black;
+  background-color: blue;
   font-family: sans-serif;
   font-size: 12px;
+  padding-top: 10px;
+  padding-left: 32px;
+  height: 123px;
+
+
 }
 
 .bg-nrcmd{
-  background-color: #1E90FF;
- color: white;
+  background-color: lightgreen;
+ color: black;
  font-size: 15px;
 
 }
 
 .bg-nrcmd.accordion-body{
-  background-color: black;
+  background-color: darkgreen;
   font-family: sans-serif;
   font-size: 12px;
+  height: 123px;
+  padding-top: 10px;
+  padding-left: 32px;
 }

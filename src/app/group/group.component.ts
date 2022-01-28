@@ -114,6 +114,7 @@ export class GroupComponent implements OnInit, OnDestroy {
       });
     }
     this.items = [];
+
   }
   /**
    * on file drop handler
