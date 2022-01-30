@@ -9,19 +9,19 @@
     [ngClass]="getClass()"
   >
     <div class="row" style="width: 90% !important; font-size: 12px">
-      <div class="col-3">{{ user_profile.name | uppercase }}</div>
-      <div class="col-3">{{ user_profile.sportstype | uppercase }}</div>
+      <div class="col-3 report-text">{{ user_profile.name | uppercase }}</div>
+      <div class="col-3 report-text">{{ user_profile.sportstype | uppercase }}</div>
       <div
         class="col-3 fw-bolder"
         [ngClass]="
           user_profile.result === 'Not Recommended'
-            ? 'text-dark'
-            : 'text-success'
+            ? 'not-recommeded-text'
+            : 'recommeded-text'
         "
       >
         {{ user_profile.result | uppercase }}
       </div>
-      <div class="col-3 text-end">
+      <div class="col-3 text-end report-text">
         {{ user_profile.assessment_date | date }}
       </div>
     </div>

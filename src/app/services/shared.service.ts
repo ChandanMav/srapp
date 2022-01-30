@@ -8,6 +8,6 @@ export class SharedService {
 
   messageSubject = new BehaviorSubject<boolean>(true);
   isGroupSubmit = new BehaviorSubject<boolean>(false);
-
+  filterEnabled = new BehaviorSubject<boolean>(false);
   constructor() { }
 }

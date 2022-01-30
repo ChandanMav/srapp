@@ -15,6 +15,9 @@ import { RecommenderService } from 'src/app/services/recommender.service';
 import { SharedService } from 'src/app/services/shared.service';
 import { GRPOutput } from 'src/app/shared/group.output.model';
 import Swal from 'sweetalert2';
+import { SPORT } from './../../shared/sports'
+import { Quote } from './../../shared/sports'
+import { Quotes } from './../../shared/sports'
 
 @Component({
   selector: 'app-child',
@@ -24,22 +27,17 @@ import Swal from 'sweetalert2';
 export class ChildComponent implements OnInit, OnDestroy {
   @Input() data: any = {};
   @Input() i: number = 0;
-
-
-
   isChecked: boolean = true;
-
   @Output() checkedIn = new EventEmitter<{ i: number; action: string }>();
   @Output() checkedout = new EventEmitter<{ i: number; action: string }>();
-
   selectAllSubject: Subscription;
-
   isGroupSubmit: boolean;
   isResponseArrived: boolean;
   responseData: GRPOutput;
-
   isGroupSubmitSubject: Subscription;
   grpOutputsSubject: Subscription;
+  sports: string[] = SPORT;
+  quotes: Quote[] = Quotes
 
   checkboxClicked(i: number) {
     this.isChecked = !this.isChecked;
@@ -131,5 +129,19 @@ export class ChildComponent implements OnInit, OnDestroy {
       }
     }
     return false;
+  }
+
+  otherSportsRecommendation(i: number): string {
+    let l = this.sports.length;
+
+    if (i == 0) {
+      i = l - 1
+    }
+
+    if (i >= l) {
+      i = i % l
+    }
+
+    return this.sports[i];
   }
 }

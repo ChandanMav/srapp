@@ -20,3 +20,29 @@
     font-size: 12px;
 
 }
+
+.carousel-control-next-icon{
+  max-width: 50px;
+    max-height: 14px !important;
+
+}
+
+.carousel-control-prev-icon{
+  max-width: 50px;
+    max-height: 14px !important;
+
+}
+
+.card-title{
+  color: #0dcaf0;
+  font-size: 14px;
+
+}
+
+.prediction-text{
+ color: #1b3a57 !important;
+ font-size: 18px !important;
+}
+
+
+

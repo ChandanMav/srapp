@@ -141,15 +141,17 @@
                         <tr>
                           <th scope="row">Anticipation Index</th>
                           <td [ngClass]="
-                          getNotRecommendedKeyCSS('anticipation_index')
-                        ">
+                              getNotRecommendedKeyCSS('anticipation_index')
+                            ">
                             {{ data.anticipation_index }}
                           </td>
                         </tr>
 
                         <tr>
                           <th scope="row">Peripheral Vision</th>
-                          <td [ngClass]="getNotRecommendedKeyCSS('peripheral_vision')">
+                          <td [ngClass]="
+                              getNotRecommendedKeyCSS('peripheral_vision')
+                            ">
                             {{ data.peripheral_vision }}
                           </td>
                         </tr>
@@ -157,16 +159,13 @@
                     </table>
                   </div>
                 </div>
-                <div class="col-12">
-
+                <div class="col-12 d-flex justify-content-center">
                   <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <button type="button" class="btn btn-primary btn-sm" (click)="tryIt(modelRef)">
-                       New Assessment
+                    <button type="button" class="btn btn-primary btn-sm" style="width: 100px" (click)="tryIt(modelRef)">
+                      Re-Assess
                     </button>
-                    <button type="button" class="btn btn-success btn-sm" (click)="save()">
-                      Save
-                    </button>
-                    <button type="button" #modelRef class="btn btn-secondary btn-sm" data-bs-dismiss="modal">
+                    <button type="button" #modelRef class="btn btn-secondary btn-sm" style="width: 100px"
+                      data-bs-dismiss="modal">
                       Close
                     </button>
                   </div>
@@ -177,26 +176,46 @@
             </div>
             <div class="col-md-8 col-12">
               <div class="card text-center">
-                <div class="card-header"
-                  [ngClass]="responseData.prediction === 'Recommended' ? 'alert alert-primary' : 'alert alert-danger'"
-                  role="alert">
+                <div class="card-header" [ngClass]="
+                    responseData.prediction === 'Recommended'
+                      ? 'alert alert-primary'
+                      : 'alert alert-danger'
+                  " role="alert">
                   Football
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">{{ responseData.prediction }}</h5>
-                  <figure>
-                    <blockquote class="blockquote" style="font-size: 12px;">
-                      <p>
-                        2018 FIFA World Cup final was watched by 1.1 billion
-                        people around the world, becoming the most-watched
-                        competition in the globe.
-                      </p>
-                    </blockquote>
+                  <h5 class="card-title prediction-text">{{ responseData.prediction }}</h5>
 
-                    <figcaption class="blockquote-footer">
-                      <cite title="Source Title">topmediadvertising</cite>
-                    </figcaption>
-                  </figure>
+                  <div id="carouselExampleControls{{i}}" class="carousel  carousel-dark slide" data-bs-ride="carousel"
+                    data-bs-touch="true">
+                    <div class="carousel-inner">
+                      <div class="carousel-item" *ngFor="let quote of quotes; let j= index"
+                        data-bs-interval="2000" [ngClass]="j==0?'active':'' ">
+                        <figure class="d-block w-100" id={{j}}>
+                          <blockquote class="blockquote" style="font-size: 12px">
+                            <p>
+                              {{quote.title}}
+                            </p>
+                          </blockquote>
+
+                          <figcaption class="blockquote-footer">
+                            <cite title="Source Title"> {{quote.agency}}</cite>
+                          </figcaption>
+                        </figure>
+                      </div>
+
+                    </div>
+                    <button class="carousel-control-prev" type="button"
+                      [attr.data-bs-target]="'#carouselExampleControls' + i" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button"
+                      [attr.data-bs-target]="'#carouselExampleControls' + i" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
                 </div>
                 <div class="card-footer text-muted">
                   {{
@@ -208,29 +227,29 @@
                 </div>
               </div>
 
-
-              <div class="card mt-2" style="max-width: 240;">
+              <div class="card mt-2" style="max-width: 240">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img src='../../../assets/interest1.jpeg' class="img-fluid rounded-start h-100" alt="">
+                    <img src="../../../assets/interest1.jpeg" class="img-fluid rounded-start h-100" alt="" />
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
                       <h5 class="card-title">Other Sports Recommendation</h5>
                       <div class="card-text">
-                        <div class="alert alert-success" role="alert">
-                          Cricket
-                        </div>
-                        <div class="alert alert-success" role="alert">
-                          Tennis
-                        </div>
-                      </div>
 
+
+                          <div class="alert alert-success" role="alert" >
+                            {{otherSportsRecommendation(i)}}
+                          </div>
+                          <div class="alert alert-success" role="alert">
+                            {{otherSportsRecommendation(i+1)}}
+                          </div>
+
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

@@ -22,3 +22,5 @@ const RECOMMENDED = {
 export const outputs: any = [
   NOTRECOMMENDED, RECOMMENDED
 ]
+
+

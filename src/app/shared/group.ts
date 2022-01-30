@@ -60,27 +60,27 @@ export const Groups: any = [
     peripheral_vision: Math.floor(Math.random() * 99) + 1
   },
   {
-    name: "Manish",
-    bmi: 49,
-    Running_Speed: 6,
-    agility: 74,
-    Reaction_Time: 50,
-    balance: 99,
-    strength: 1,
-    aggression: 61,
-    anticipation_index: 30,
-    peripheral_vision: 74
+    name: "John",
+    bmi: Math.floor(Math.random() * 99) + 1,
+    Running_Speed: Math.floor(Math.random() * 99) + 1,
+    agility: Math.floor(Math.random() * 99) + 1,
+    Reaction_Time: Math.floor(Math.random() * 99) + 1,
+    balance: Math.floor(Math.random() * 99) + 1,
+    strength: Math.floor(Math.random() * 99) + 1,
+    aggression: Math.floor(Math.random() * 99) + 1,
+    anticipation_index: Math.floor(Math.random() * 99) + 1,
+    peripheral_vision: Math.floor(Math.random() * 99) + 1
   },
   {
-    name: "David",
-    bmi: 96,
-    Running_Speed: 89,
-    agility: 19,
-    Reaction_Time: 80,
-    balance:30,
-    strength: 84,
-    aggression: 38,
-    anticipation_index: 92,
-    peripheral_vision: 19
+    name: "John",
+    bmi: Math.floor(Math.random() * 99) + 1,
+    Running_Speed: Math.floor(Math.random() * 99) + 1,
+    agility: Math.floor(Math.random() * 99) + 1,
+    Reaction_Time: Math.floor(Math.random() * 99) + 1,
+    balance: Math.floor(Math.random() * 99) + 1,
+    strength: Math.floor(Math.random() * 99) + 1,
+    aggression: Math.floor(Math.random() * 99) + 1,
+    anticipation_index: Math.floor(Math.random() * 99) + 1,
+    peripheral_vision: Math.floor(Math.random() * 99) + 1
   }
 ];

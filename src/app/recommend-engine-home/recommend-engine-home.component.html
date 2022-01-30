@@ -1,11 +1,15 @@
 <section id="tabs" style="height: auto !important">
+
+
+
   <div class="container-fluid navigation">
+    <h1 class="recommendation-title"> Recommender </h1>
     <div class="row">
       <div class="col-xs-12">
-        <nav style="background-color:linen; font-size: 15px;">
-          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+        <nav style="font-size: 13px;">
+          <div class="row nav nav-tabs nav-fill" id="nav-tab" role="tablist" style="margin-left:19px">
             <a
-              class="nav-item nav-link active"
+              class="nav-item nav-link active col-1  d-flex justify-content-start"
               id="nav-home-tab"
               data-toggle="tab"
               routerLink="./"
@@ -14,10 +18,11 @@
               role="tab"
               aria-controls="nav-home"
               aria-selected="true"
+              style="padding-left: 2px;"
               ><span class="fa fa-user"></span>&nbsp;<span class="fw-bold font-monospace" >Individual</span> </a
             >
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link col-1 d-flex justify-content-start"
               id="nav-profile-tab"
               data-toggle="tab"
               role="tab"
@@ -29,7 +34,7 @@
               ><span class="fa fa-users"></span>&nbsp; <span class="fw-bold font-monospace" >Group</span></a
             >
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link col-1  d-flex justify-content-start"
               id="nav-contact-tab"
               data-toggle="tab"
               role="tab"
@@ -38,10 +43,11 @@
               routerLink="prescription"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
-              ><span class="fa fa-file-powerpoint-o"></span>&nbsp; <span class="fw-bold font-monospace" >Prescription Upload</span></a
+              style="padding-left: 0px;"
+              ><span class="fa fa-file-powerpoint-o"></span>&nbsp; <span class="fw-bold font-monospace" >Prescription</span></a
             >
             <a
-              class="nav-item nav-link"
+              class="nav-item nav-link col-1  d-flex justify-content-start"
               id="nav-about-tab"
               data-toggle="tab"
               role="tab"
@@ -50,8 +56,10 @@
               routerLink="profile"
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
-              ><span class="fa fa-file-archive-o"></span>&nbsp; <span class="fw-bold font-monospace" >Assessment History</span></a
+
+              ><span class="fa fa-file-archive-o"></span>&nbsp; <span class="fw-bold font-monospace" >Report</span></a
             >
+            <a class="col-8 d-flex justify-content-start"></a>
           </div>
         </nav>
         <div class="tab-content pt-1" id="nav-tabContent">

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/services/shared.service';
 import { Profile } from 'src/app/shared/profile';
 import { Profiles } from 'src/app/shared/profiles';
 
@@ -7,22 +9,39 @@ import { Profiles } from 'src/app/shared/profiles';
   templateUrl: './user-profiles.component.html',
   styleUrls: ['./user-profiles.component.css'],
 })
-export class UserProfilesComponent implements OnInit {
+export class UserProfilesComponent implements OnInit, OnDestroy {
   user_profiles: Profile[] = [];
-  isFilterSelected:boolean = false;
+  isFilterSelected: boolean;
   rowNum: string = "col-12";
-  constructor() {}
+  filterSubscription:Subscription
+
+  constructor(private sharedService: SharedService) { }
+
 
   ngOnInit(): void {
     this.user_profiles = Profiles;
+    this.filterSubscription =  this.sharedService.filterEnabled.subscribe({
+      next: enableFlag => { this.isFilterSelected = enableFlag; this.setRowNum(); }
+    })
   }
 
-  showFilter(){
+  showFilter() {
     this.isFilterSelected = !this.isFilterSelected;
-    if(this.isFilterSelected){
-      this.rowNum="col-10";
-    }else{
-      this.rowNum="col-12";
+    this.sharedService.filterEnabled.next(this.isFilterSelected);
+    this.setRowNum();
+  }
+
+  private setRowNum() {
+    if (this.isFilterSelected) {
+      this.rowNum = "col-10";
+    } else {
+      this.rowNum = "col-12";
     }
   }
+
+  ngOnDestroy(): void {
+    this.filterSubscription.unsubscribe();
+  }
+
+
 }

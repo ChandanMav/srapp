@@ -3,58 +3,55 @@ section {
   padding: 2px 0;
 }
 
-.navigation  #tabs {
-  margin-left: 16px;
-  font-size: 15px;
+.navigation #tabs {
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #1b3a57;
+  font-family: "Google Sans",sans-serif;
+}
+.navigation #tabs h6.section-title {
 
 }
-.navigation  #tabs h6.section-title {
-  color: black;
 
-}
-
-.navigation  #tabs .nav-tabs .nav-item.show .nav-link,
+.navigation #tabs .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
-  color: black;
+
 
   border-color: transparent transparent #f3f3f3;
   border-bottom: 4px solid !important;
   font-weight: bold;
-
 }
-.navigation  #tabs .nav-tabs .nav-link {
+.navigation #tabs .nav-tabs .nav-link {
   border: 1px solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-
 }
 
-.navigation  .nav-tabs .nav-item .nav-link {
-  color: #fff;
 
-}
-
-.navigation  .nav-tabs .nav-item .nav-link.active {
-
-
-}
-
-.navigation  .tab-content {
-  border: 1px solid #dee2e6;
+.navigation .tab-content {
+  border: 1px solid inherit;
   border-top: transparent;
   padding: 15px;
-
 }
 
-.navigation  .tab-content .tab-pane {
-
+.navigation .tab-content .tab-pane {
   min-height: 200px;
   height: auto;
-
 }
 
 .navigation .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
   background-color: inherit;
   border-bottom: 2px solid !important;
+}
+
+.recommendation-title{
+  margin-left: 19px;
+  font-size: 28px;
+  font-weight: bold;
+  /* margin-bottom: 12px; */
+  color: #1b3a57;
+  font-family: "Google Sans",sans-serif;
+  line-height: 38px;
 }
