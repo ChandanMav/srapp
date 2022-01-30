@@ -129,6 +129,7 @@ export class HealthParameterInputFormComponent
   clear() {
     this.frmRegister.reset(this.formInitialValues);
     this.submitted = false;
+    this.errorMessage = '';
   }
 
   ngOnDestroy(): void {
@@ -219,8 +220,9 @@ export class HealthParameterInputFormComponent
       error: (e) => {
         console.error(e);
         this.submitted = false;
-        this.errorMessage = e;
         this.clear();
+        this.errorMessage = e;
+
       },
     });
   }
