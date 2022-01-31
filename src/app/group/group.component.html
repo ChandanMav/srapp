@@ -72,18 +72,20 @@
   <div *ngIf="message != ''" class="mt-2">
     <div class="row gy-2 bg-primary text-white fw-bold text-capitalize text-wrap text-center" style="font-size: 13px; height: 39px;">
       <div class="col-1 pt-10" style="padding-top: 2px;" scope="col">{{'Name' | shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px;">{{'BMI'  | shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Running Speed' | shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Agility' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px; margin-left: -8px;">{{'BMI'  | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px; margin-left: 1px;">{{'Running Speed' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px; margin-left: -11px;">{{'Agility' | shorten:8}}</div>
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Reaction Time' | shorten:8}}</div>
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Balance' | shorten:8}}</div>
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Strength' | shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Aggression'| shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px;   margin-left: -13px;">{{'Aggression'| shorten:8}}</div>
       <div class="col-1 pt-10" style="padding-top: 2px;">{{'Anticipation Index'| shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px;">{{'Peripheral Vision' | shorten:8}}</div>
-      <div class="col-1 pt-10" style="padding-top: 2px; padding-left: 0px;padding-right: 0px;">Select Sport <span class="	fa fa-level-down"></span></div>
+      <div class="col-1 pt-10" style="padding-top: 2px; margin-left: -8px;">{{'Peripheral Vision' | shorten:8}}</div>
+      <div class="col-1 pt-10" style="padding-top: 2px; padding-left: 0px;padding-right: 0px; margin-left: 30px;">Select Sport <span class="	fa fa-level-down"></span></div>
       <div class="col-1" style="padding-top: 2px;">
-        <span [ngClass]="getClass()" (click)="switchAll()" style="padding-right: 0%;margin-left: 45px;"  *ngIf="!isGroupSubmit"></span> </div>
+        <span [ngClass]="getClass()" (click)="switchAll()" style="padding-right: 0%;margin-left: 45px;"  *ngIf="!isGroupSubmit"></span>
+        <span  *ngIf="isGroupSubmit">Rcmd Report</span>
+      </div>
     </div>
 
     <ul class="list-group list-group-flush p-2 text-dark bg-opacity-10 bg-color-app">

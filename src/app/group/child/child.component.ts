@@ -95,6 +95,14 @@ export class ChildComponent implements OnInit, OnDestroy {
       : 'btn btn-warning not-recommended';
   }
 
+
+  getFontAwesomeClass(): string {
+    return this.responseData.prediction === 'Recommended'
+      ? 'fa fa-check text-success'
+      : 'fa fa-close text-danger';
+  }
+
+
   tryIt(modelRef: any) {
     modelRef.click();
     this.commonService.isGroupSubmit.next(false);
@@ -143,5 +151,26 @@ export class ChildComponent implements OnInit, OnDestroy {
     }
 
     return this.sports[i];
+  }
+
+  getSportsImage(i: number): string {
+
+   let sportName = this.otherSportsRecommendation(i);
+
+   switch(sportName){
+     case "Football" :{
+          return "football"
+     }
+     case "Cricket" :{
+       return "cricket"
+    }
+    case "Tennis" :{
+       return "tennis"
+    }
+    case "BasketBall" :{
+       return "basketball"
+    }
+   }
+   return "football";
   }
 }

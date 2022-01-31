@@ -57,11 +57,19 @@
     <input *ngIf="!isGroupSubmit && (!isResponseArrived || !isChecked)" class="form-check-input me-1" type="checkbox"
       [checked]="isChecked" (change)="checkboxClicked(i)" value="i" aria-label="..." style="margin-left: 69px" />
 
-    <button [ngClass]="getBtnClass()" class="btn-sm" *ngIf="isResponseArrived && isChecked" type="button"
-      data-bs-toggle="tooltip" data-bs-placement="right" title="{{ responseData.prediction }}" data-bs-toggle="modal"
-      [attr.data-bs-target]="'#exampleModal' + i">
-      {{ responseData.prediction | shorten: 7 }}
-    </button>
+    <div class="row" *ngIf="isResponseArrived && isChecked" style="width: 128px;">
+
+      <div class="col-12">
+        <span [ngClass]="getFontAwesomeClass()"   style="font-size: 18px;margin-top: 5px;margin-left: 21px;"></span>
+        &nbsp;&nbsp;
+        <a data-bs-toggle="tooltip"
+          data-bs-placement="right" title="{{ responseData.prediction }}" data-bs-toggle="modal"
+          [attr.data-bs-target]="'#exampleModal' + i" style="cursor: pointer;">
+         <!-- {{'Other Recommendation' | shorten:12}} -->
+         <img class="img-fluid" style="max-height: 23px;margin-top: -4px;margin-left: 2px;" src="../../../assets/click.png" />
+      </a>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -181,7 +189,17 @@
                       ? 'alert alert-primary'
                       : 'alert alert-danger'
                   " role="alert">
-                  Football
+
+                  <div class="row">
+                    <div class="col-2">
+                      <img  class="img-fluid d-flex justify-content-start" src="../../../assets/sportsimage/football.png" style="max-height: 20px;"/>
+                    </div>
+                    <div class="col-8">
+                     <span>Football</span>
+                    </div>
+                  </div>
+
+
                 </div>
                 <div class="card-body">
                   <h5 class="card-title prediction-text">{{ responseData.prediction }}</h5>
@@ -189,8 +207,8 @@
                   <div id="carouselExampleControls{{i}}" class="carousel  carousel-dark slide" data-bs-ride="carousel"
                     data-bs-touch="true">
                     <div class="carousel-inner">
-                      <div class="carousel-item" *ngFor="let quote of quotes; let j= index"
-                        data-bs-interval="2000" [ngClass]="j==0?'active':'' ">
+                      <div class="carousel-item" *ngFor="let quote of quotes; let j= index" data-bs-interval="2000"
+                        [ngClass]="j==0?'active':'' ">
                         <figure class="d-block w-100" id={{j}}>
                           <blockquote class="blockquote" style="font-size: 12px">
                             <p>
@@ -234,16 +252,35 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">Other Sports Recommendation</h5>
+                      <h5 class="card-title">Sports Recommendation</h5>
                       <div class="card-text">
 
 
-                          <div class="alert alert-success" role="alert" >
-                            {{otherSportsRecommendation(i)}}
+                        <div class="alert alert-success" role="alert">
+
+                          <div class="row">
+                            <div class="col-2">
+                              <img  class="img-fluid d-flex justify-content-start" [src]="'../../../assets/sportsimage/'+getSportsImage(i)+'.png'"style="max-height: 20px;"/>
+                            </div>
+                            <div class="col-8">
+                             <span> {{otherSportsRecommendation(i)}}</span>
+                            </div>
                           </div>
-                          <div class="alert alert-success" role="alert">
-                            {{otherSportsRecommendation(i+1)}}
+
+
+                        </div>
+                        <div class="alert alert-success" role="alert">
+
+                          <div class="row">
+                            <div class="col-2">
+                              <img  class="img-fluid d-flex justify-content-start" [src]="'../../../assets/sportsimage/'+getSportsImage(i+1)+'.png'" style="max-height: 20px;"/>
+                            </div>
+                            <div class="col-8">
+                             <span> {{otherSportsRecommendation(i+1)}} </span>
+                            </div>
                           </div>
+
+                        </div>
 
                       </div>
                     </div>

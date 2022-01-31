@@ -21,7 +21,7 @@
   </div>
   <div class="row">
     <div class="col-2 align-middle" *ngIf="isFilterSelected" >
-      <div class="row upper-content gy-1" style="padding-top: 25%;">
+      <div class="row upper-content gy-1" style="padding-top: 27%;">
         <div class="col-12" *ngIf="isFilterSelected">
           <div class="d-flex align-items-center">
             <select id="inputState" class="form-select form-select-sm">
@@ -43,13 +43,14 @@
               aria-describedby="emailHelp"
               placeholder="Search By Name"
             />
-            <div
+            <!-- <div
               id="emailHelp"
               class="form-text d-flex justify-content-center align-middle"
             >
               case insensitive
-            </div>
+            </div> -->
             <div class="vl"></div>
+            <hr/>
           </div>
         </div>
 
@@ -62,7 +63,7 @@
               id="inlineRadio1"
               value="Recommended"
             />
-            <label class="form-check-label form-select-sm" for="inlineRadio1"
+            <label class="form-check-label form-select-sm" style="font-size: 12px;" for="inlineRadio1"
               >Recommended</label
             >
           </div>
@@ -74,10 +75,11 @@
               id="inlineRadio2"
               value="Not Recommended"
             />
-            <label class="form-check-label form-select-sm" for="inlineRadio2"
+            <label class="form-check-label form-select-sm" style="font-size: 12px;" for="inlineRadio2"
               >Not Recommended</label
             >
           </div>
+          <hr/>
         </div>
 
         <div class="col-12 mt-2">

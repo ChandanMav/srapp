@@ -10,18 +10,8 @@
         <div class="col-12 col-md-7">
           <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" formControlName="name"
             autocomplete="off" [ngClass]="{ 'is-invalid': f['name'].touched && f['name'].errors }" />
-          <!-- <div
-            *ngIf="
-              frmRegister.controls['name'].invalid &&
-              (frmRegister.controls['name'].dirty ||
-                frmRegister.controls['name'].touched)
-            "
-            class="alert"
-          >
-            <div *ngIf="frmRegister.controls['name'].errors">
-              Please enter name
-            </div>
-          </div> -->
+
+
         </div>
       </div>
     </div>
@@ -49,8 +39,21 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="bmi" name="bmi" formControlName="bmi" required
-            placeholder="Between 1 to 99" autocomplete="off"
+            placeholder="Enter BMI" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['bmi'].touched && f['bmi'].errors }" />
+
+          <div *ngIf="(frmRegister.controls['bmi'].invalid &&
+            (frmRegister.controls['bmi'].dirty ||
+              frmRegister.controls['bmi'].touched)) && frmRegister.controls['bmi'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['bmi'].invalid &&
+          (frmRegister.controls['bmi'].dirty ||
+            frmRegister.controls['bmi'].touched)) && frmRegister.controls['bmi'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -61,8 +64,24 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="Running_Speed" name="Running_Speed"
-            formControlName="Running_Speed" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="Running_Speed" required placeholder="Enter Running Speed" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['Running_Speed'].touched && f['Running_Speed'].errors }" />
+
+
+          <div *ngIf="(frmRegister.controls['Running_Speed'].invalid &&
+            (frmRegister.controls['Running_Speed'].dirty ||
+              frmRegister.controls['Running_Speed'].touched)) && frmRegister.controls['Running_Speed'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['Running_Speed'].invalid &&
+          (frmRegister.controls['Running_Speed'].dirty ||
+            frmRegister.controls['Running_Speed'].touched)) && frmRegister.controls['Running_Speed'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -74,8 +93,21 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="agility" name="agility"
-            formControlName="agility" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="agility" required placeholder="Enter Agility" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['agility'].touched && f['agility'].errors }" />
+
+          <div *ngIf="(frmRegister.controls['agility'].invalid &&
+            (frmRegister.controls['agility'].dirty ||
+              frmRegister.controls['agility'].touched)) && frmRegister.controls['agility'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['agility'].invalid &&
+          (frmRegister.controls['agility'].dirty ||
+            frmRegister.controls['agility'].touched)) && frmRegister.controls['agility'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -86,8 +118,21 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="Reaction_Time" formControlName="Reaction_Time"
-            name="Reaction_Time" required placeholder="Between 1 to 99" autocomplete="off"
+            name="Reaction_Time" required placeholder="Enter Reaction Time" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['Reaction_Time'].touched && f['Reaction_Time'].errors }" />
+
+          <div *ngIf="(frmRegister.controls['Reaction_Time'].invalid &&
+            (frmRegister.controls['Reaction_Time'].dirty ||
+              frmRegister.controls['Reaction_Time'].touched)) && frmRegister.controls['Reaction_Time'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['Reaction_Time'].invalid &&
+          (frmRegister.controls['Reaction_Time'].dirty ||
+            frmRegister.controls['Reaction_Time'].touched)) && frmRegister.controls['Reaction_Time'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -99,8 +144,21 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="balance" name="balance"
-            formControlName="balance" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="balance" required placeholder="Enter Balance" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['balance'].touched && f['balance'].errors }" />
+
+          <div *ngIf="(frmRegister.controls['balance'].invalid &&
+            (frmRegister.controls['balance'].dirty ||
+              frmRegister.controls['balance'].touched)) && frmRegister.controls['balance'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['balance'].invalid &&
+          (frmRegister.controls['balance'].dirty ||
+            frmRegister.controls['balance'].touched)) && frmRegister.controls['balance'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -111,8 +169,21 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="strength" name="strength"
-            formControlName="strength" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="strength" required placeholder="Enter Strength" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['strength'].touched && f['strength'].errors }" />
+
+          <div *ngIf="(frmRegister.controls['strength'].invalid &&
+            (frmRegister.controls['strength'].dirty ||
+              frmRegister.controls['strength'].touched)) && frmRegister.controls['strength'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['strength'].invalid &&
+          (frmRegister.controls['strength'].dirty ||
+            frmRegister.controls['strength'].touched)) && frmRegister.controls['strength'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -124,8 +195,21 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="aggression" name="aggression"
-            formControlName="aggression" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="aggression" required placeholder="Enter Aggression" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['aggression'].touched && f['aggression'].errors }" />
+
+          <div *ngIf="(frmRegister.controls['aggression'].invalid &&
+            (frmRegister.controls['aggression'].dirty ||
+              frmRegister.controls['aggression'].touched)) && frmRegister.controls['aggression'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div *ngIf="(frmRegister.controls['aggression'].invalid &&
+          (frmRegister.controls['aggression'].dirty ||
+            frmRegister.controls['aggression'].touched)) && frmRegister.controls['aggression'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -138,8 +222,23 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="anticipation_index" name="anticipation_index"
-            formControlName="anticipation_index" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="anticipation_index" required placeholder="Enter Anticipation Index" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['anticipation_index'].touched && f['anticipation_index'].errors }" />
+
+          <div
+            *ngIf="(frmRegister.controls['anticipation_index'].invalid &&
+            (frmRegister.controls['anticipation_index'].dirty ||
+              frmRegister.controls['anticipation_index'].touched)) && frmRegister.controls['anticipation_index'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div
+            *ngIf="(frmRegister.controls['anticipation_index'].invalid &&
+          (frmRegister.controls['anticipation_index'].dirty ||
+            frmRegister.controls['anticipation_index'].touched)) && frmRegister.controls['anticipation_index'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
@@ -151,8 +250,24 @@
         </div>
         <div class="col-12 col-md-7">
           <input type="number" min="1" max="99" class="form-control" id="peripheral_vision" name="peripheral_vision"
-            formControlName="peripheral_vision" required placeholder="Between 1 to 99" autocomplete="off"
+            formControlName="peripheral_vision" required placeholder="Enter Peripheral Vision" autocomplete="off"
             [ngClass]="{ 'is-invalid': f['peripheral_vision'].touched && f['peripheral_vision'].errors }" />
+
+
+          <div
+            *ngIf="(frmRegister.controls['peripheral_vision'].invalid &&
+            (frmRegister.controls['peripheral_vision'].dirty ||
+              frmRegister.controls['peripheral_vision'].touched)) && frmRegister.controls['peripheral_vision'].errors?.['max']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter postive value within 0-100
+          </div>
+          <div
+            *ngIf="(frmRegister.controls['peripheral_vision'].invalid &&
+          (frmRegister.controls['peripheral_vision'].dirty ||
+            frmRegister.controls['peripheral_vision'].touched)) && frmRegister.controls['peripheral_vision'].errors?.['min']"
+            class="alert alert-danger mt-2" style="font-size: 11px;">
+            Please enter positive value
+          </div>
         </div>
       </div>
     </div>
