@@ -60,7 +60,7 @@
     <div class="row" *ngIf="isResponseArrived && isChecked" style="width: 128px;">
 
       <div class="col-12">
-        <span [ngClass]="getFontAwesomeClass()"   style="font-size: 18px;margin-top: 5px;margin-left: 21px;"></span>
+        <span [ngClass]="getFontAwesomeClass()"  [ngStyle]="getStyle()" ></span>
         &nbsp;&nbsp;
         <a data-bs-toggle="tooltip"
           data-bs-placement="right" title="{{ responseData.prediction }}" data-bs-toggle="modal"

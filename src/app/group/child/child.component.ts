@@ -102,6 +102,12 @@ export class ChildComponent implements OnInit, OnDestroy {
       : 'fa fa-close text-danger';
   }
 
+  getStyle(): any {
+    return this.responseData.prediction === 'Recommended'
+      ? {'font-size': '18px', 'margin-top': '5px', 'margin-left': '21px'}
+      : {'font-size': '22px', 'margin-top': '5px', 'margin-left': '21px'}
+  }
+
 
   tryIt(modelRef: any) {
     modelRef.click();
