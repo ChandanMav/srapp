@@ -1,7 +1,7 @@
 export const Groups: any = [
   {
     name: "Chandan",
-    bmi: 88,
+    bmi: 22.5,
     Running_Speed: 81,
     agility: 97,
     Reaction_Time: 10,
@@ -13,7 +13,7 @@ export const Groups: any = [
   },
   {
     name: "Khushbu",
-    bmi: 32,
+    bmi: 21.4,
     Running_Speed: 65,
     agility: 86,
     Reaction_Time: 28,
@@ -25,7 +25,7 @@ export const Groups: any = [
   },
   {
     name: "Alwin",
-    bmi: 20,
+    bmi: 20.9,
     Running_Speed: 16,
     agility: 27,
     Reaction_Time: 74,
@@ -37,7 +37,7 @@ export const Groups: any = [
   },
   {
     name: "Kiaan",
-    bmi: Math.floor(Math.random() * 99) + 1,
+    bmi: 25.6,
     Running_Speed: Math.floor(Math.random() * 99) + 1,
     agility: Math.floor(Math.random() * 99) + 1,
     Reaction_Time: Math.floor(Math.random() * 99) + 1,
@@ -48,8 +48,8 @@ export const Groups: any = [
     peripheral_vision: Math.floor(Math.random() * 99) + 1
   },
   {
-    name: "John",
-    bmi: Math.floor(Math.random() * 99) + 1,
+    name: "Naveen",
+    bmi: 29.4,
     Running_Speed: Math.floor(Math.random() * 99) + 1,
     agility: Math.floor(Math.random() * 99) + 1,
     Reaction_Time: Math.floor(Math.random() * 99) + 1,
@@ -60,27 +60,27 @@ export const Groups: any = [
     peripheral_vision: Math.floor(Math.random() * 99) + 1
   },
   {
-    name: "John",
-    bmi: Math.floor(Math.random() * 99) + 1,
-    Running_Speed: Math.floor(Math.random() * 99) + 1,
-    agility: Math.floor(Math.random() * 99) + 1,
-    Reaction_Time: Math.floor(Math.random() * 99) + 1,
-    balance: Math.floor(Math.random() * 99) + 1,
-    strength: Math.floor(Math.random() * 99) + 1,
-    aggression: Math.floor(Math.random() * 99) + 1,
-    anticipation_index: Math.floor(Math.random() * 99) + 1,
-    peripheral_vision: Math.floor(Math.random() * 99) + 1
+    name: "Sayan",
+    bmi: 25.6,
+    Running_Speed: 91,
+    agility: 15,
+    Reaction_Time: 82,
+    balance: 53,
+    strength: 21,
+    aggression: 32,
+    anticipation_index: 32,
+    peripheral_vision: 34
   },
   {
-    name: "John",
-    bmi: Math.floor(Math.random() * 99) + 1,
-    Running_Speed: Math.floor(Math.random() * 99) + 1,
-    agility: Math.floor(Math.random() * 99) + 1,
-    Reaction_Time: Math.floor(Math.random() * 99) + 1,
-    balance: Math.floor(Math.random() * 99) + 1,
-    strength: Math.floor(Math.random() * 99) + 1,
-    aggression: Math.floor(Math.random() * 99) + 1,
-    anticipation_index: Math.floor(Math.random() * 99) + 1,
-    peripheral_vision: Math.floor(Math.random() * 99) + 1
+    name: "Sujaya",
+    bmi: 23.6,
+    Running_Speed: 23,
+    agility: 45,
+    Reaction_Time: 75,
+    balance: 37,
+    strength: 82,
+    aggression: 23,
+    anticipation_index: 57,
+    peripheral_vision: 45
   }
 ];

@@ -11,3 +11,13 @@
   /* background-color: rgba(255, 255, 255, 0.891);
   background-blend-mode: overlay; */
 }
+
+
+.swal2-actions.swal2-styled.swal2-confirm{
+  background-color: blue !important;
+}
+
+.swal2-actions.swal2-icon.swal2-info{
+  border-color: blue !important;
+    color: blue !important;
+}

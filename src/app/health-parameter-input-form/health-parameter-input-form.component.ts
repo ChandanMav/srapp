@@ -51,34 +51,34 @@ export class HealthParameterInputFormComponent
     this.frmRegister = this._fb.group({
       name: ['', [Validators.required]],
       sportstype: ['Football', [Validators.required]],
-      bmi: ['', [Validators.required, Validators.min(1), Validators.max(99)]],
+      bmi: ['', [Validators.required, Validators.min(0), Validators.max(100)]],
       Running_Speed: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       agility: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       Reaction_Time: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       balance: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       strength: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       aggression: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       anticipation_index: [
         '',
-        [Validators.required, Validators.min(1), Validators.max(99)],
+        [Validators.required, Validators.min(0), Validators.max(100)],
       ],
       peripheral_vision: [
         '',
@@ -150,23 +150,23 @@ export class HealthParameterInputFormComponent
         this.errorMessage = '';
         if (res['prediction'] === 'Not Recommended') {
           let html =
-            "<div class='row container'><div class='offset-3 col-9 pt-4'><table><tr><td>";
+            "<div class='row container' style='margin-top: -23px;'><div class='offset-3 col-9 pt-4'><table><tr><td style='text-align:start;'>";
           let label = res['imp_params_label'];
           let value = res['imp_params'];
 
           for (let i = 0; i < label.length; i++) {
             if (i == label.length - 1) {
               html +=
-                label[i].toUpperCase() +
-                '</td> <td class="text-danger">' +
+                label[i]+
+                '</td> <td class="text-danger" style="padding-left:26px;">' +
                 value[i] +
                 '</td></tr>';
             } else {
               html +=
-                label[i].toUpperCase() +
-                '</td> <td class="text-danger">' +
+                label[i] +
+                '</td> <td class="text-danger" style="padding-left:26px;">' +
                 value[i] +
-                '</td></tr><tr><td>';
+                '</td></tr><tr><td style="text-align:start;">';
             }
           }
 
@@ -179,9 +179,9 @@ export class HealthParameterInputFormComponent
               this.frmRegister.value.name +
               '</span>',
             html:
-              '<p class="fw-bolder fs-6">' +
+              '<p class="fw-bolder fs-6" style="line-height:28px;">' +
               this.frmRegister.value.sportstype +
-              ' is far but not too much...work on below parameters and re-take the assessment</p>' +
+              ' is far but not too much.<br/> Focus on below parameters and re-take the assessment</p>' +
               html,
             width: '34rem',
             confirmButtonText: 'New Assessment',

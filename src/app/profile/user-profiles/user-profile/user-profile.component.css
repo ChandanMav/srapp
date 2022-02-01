@@ -1,11 +1,11 @@
 .bg-rcmd{
- background-color: skyblue;
- color: black;
+ /* background-color: #76933C; */
  font-size: 15px;
+
 }
 
 .bg-rcmd.accordion-body{
-  background-color: blue;
+  /* background-color: #C4D79B; */
   font-family: sans-serif;
   font-size: 12px;
   padding-top: 10px;
@@ -16,14 +16,14 @@
 }
 
 .bg-nrcmd{
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
  color: black;
  font-size: 15px;
 
 }
 
 .bg-nrcmd.accordion-body{
-  background-color: darkgreen;
+  /* background-color: darkgreen; */
   font-family: sans-serif;
   font-size: 12px;
   height: 123px;
